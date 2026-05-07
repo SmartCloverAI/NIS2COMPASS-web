@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+site/public/docs/
+site/public/artifacts/
+.env
+.env.*
+npm-debug.log*
+.DS_Store

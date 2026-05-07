@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nis2compass.org/schemas/monitoring-event-sanitized.schema.json",
+  "title": "NIS2COMPASS Sanitized Monitoring Event",
+  "type": "object",
+  "required": ["event_id", "timestamp", "event_type", "severity", "source", "confidentiality"],
+  "properties": {
+    "event_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "event_type": { "type": "string" },
+    "severity": { "enum": ["informational", "low", "medium", "high", "critical"] },
+    "source": { "type": "string" },
+    "summary": { "type": "string" },
+    "related_module": { "type": "string" },
+    "confidentiality": { "enum": ["public-safe", "synthetic"] }
+  }
+}

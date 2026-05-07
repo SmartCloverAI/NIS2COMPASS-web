@@ -1,0 +1,20 @@
+# Example descriptor. Adapt field names to the active Ratio1 Worker App Runner deployment schema.
+name: nis2compass-site
+source:
+  type: git
+  repository: git@github.com-andreea:SmartCloverAI/NIS2COMPASS.git
+  branch: main
+  clone: full-repository
+runtime:
+  runner: worker_app_runner
+  working_directory: site
+  base_runtime: nodejs-22-alpine
+  build_command: npm ci && npm run build
+  start_command: npm run start
+  port: 8080
+resources:
+  cpu: 0.5
+  memory: 512Mi
+  disk: 2Gi
+env:
+  NODE_ENV: production

@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+const { title = "NIS2COMPASS", description = "Public dissemination hub for NIS2 readiness, evidence, and CYberSynchrony alignment." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="NIS2COMPASS home">
+        <span class="brand-mark" aria-hidden="true">N2</span>
+        <span>NIS2COMPASS</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/docs/">Docs</a>
+        <a href="/resources/">Resources</a>
+        <a href="/docs/glossary/">Glossary</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>NIS2COMPASS public dissemination repository. Public-safe material only.</p>
+      <p>Content development: SmartClover SRL.</p>
+      <p>Copyright AI STM Learning SRL and SmartClover SRL, NIS2COMPASS consortium partners.</p>
+      <p><a href="https://cybersynchrony.eu/">CYberSynchrony</a> aligned public outputs for NIS2 readiness learning.</p>
+    </footer>
+  </body>
+</html>

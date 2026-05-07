@@ -1,0 +1,20 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { getDocs } from "../../lib/docs.mjs";
+
+export async function getStaticPaths() {
+  const docs = await getDocs();
+  return docs.map((doc) => ({
+    params: { slug: doc.slug === "index" ? undefined : doc.slug },
+    props: { doc }
+  }));
+}
+
+const { doc } = Astro.props;
+---
+<DocsLayout title={doc.title} currentSlug={doc.slug}>
+  <div class="doc-meta">
+    <span>{doc.sourcePath}</span>
+  </div>
+  <div class="rendered-doc" set:html={doc.html} />
+</DocsLayout>

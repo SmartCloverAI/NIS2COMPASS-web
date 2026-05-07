@@ -1,0 +1,21 @@
+{
+  "name": "nis2compass-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/sync-public-docs.mjs",
+    "dev": "astro dev --host 0.0.0.0 --port 4321",
+    "prebuild": "node scripts/sync-public-docs.mjs",
+    "build": "astro build",
+    "preview": "sirv dist --host 0.0.0.0 --port ${PORT:-8080}",
+    "start": "sirv dist --host 0.0.0.0 --port ${PORT:-8080}"
+  },
+  "dependencies": {
+    "marked": "^17.0.1",
+    "sirv-cli": "^3.0.1"
+  },
+  "devDependencies": {
+    "astro": "^6.2.2"
+  }
+}

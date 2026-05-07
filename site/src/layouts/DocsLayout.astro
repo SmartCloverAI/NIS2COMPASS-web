@@ -1,0 +1,42 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { getArtifactLinks, getDocsNav } from "../lib/docs.mjs";
+
+const { title, description = "NIS2COMPASS public documentation.", currentSlug = "index" } = Astro.props;
+const navGroups = getDocsNav();
+const artifactLinks = getArtifactLinks();
+---
+<BaseLayout title={`${title} | NIS2COMPASS Docs`} description={description}>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" aria-label="Documentation navigation">
+      <div class="sidebar-block">
+        <a class="sidebar-home" href="/docs/">Documentation</a>
+      </div>
+      {navGroups.map((group) => (
+        <div class="sidebar-block">
+          <h2>{group.title}</h2>
+          <ul>
+            {group.items.map(([slug, label]) => (
+              <li>
+                <a class:list={{ active: slug === currentSlug }} href={slug === "index" ? "/docs/" : `/docs/${slug}/`}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <div class="sidebar-block">
+        <h2>Key Downloads</h2>
+        <ul>
+          {artifactLinks.map(([label, href]) => (
+            <li><a href={href}>{label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+    <article class="docs-content">
+      <slot />
+    </article>
+  </div>
+</BaseLayout>

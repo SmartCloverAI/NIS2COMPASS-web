@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nis2compass.org/schemas/awareness-metric.schema.json",
+  "title": "NIS2COMPASS Awareness Metric",
+  "type": "object",
+  "required": ["metric_id", "metric_name", "period", "value", "unit", "confidentiality"],
+  "properties": {
+    "metric_id": { "type": "string" },
+    "metric_name": { "type": "string" },
+    "period": { "type": "string" },
+    "value": { "type": "number" },
+    "unit": { "type": "string" },
+    "population_size": { "type": "integer", "minimum": 0 },
+    "confidentiality": { "enum": ["public-safe", "synthetic", "internal", "pilot-sensitive"] }
+  }
+}

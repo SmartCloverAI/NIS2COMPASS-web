@@ -1,0 +1,2 @@
+evidence_id,title,owner,date_collected,source_tool,related_control,related_module,confidentiality,review_status,hash_sha256,artifact_link,notes
+EVD-0001,Synthetic example evidence,example-owner,2026-01-01,example-tool,NIS2-CTRL-001,CYBERGOPLUS,synthetic,reviewed,example-hash,docs/examples/synthetic-evidence-pack/README.md,Example row only

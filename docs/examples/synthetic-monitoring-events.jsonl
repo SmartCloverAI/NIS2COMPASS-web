@@ -1,0 +1,2 @@
+{"event_id":"MON-0001","timestamp":"2026-01-01T10:00:00Z","event_type":"authentication-anomaly","severity":"medium","source":"synthetic-wazuh-equivalent","summary":"Synthetic repeated failed login example","related_module":"CYBRITE","confidentiality":"synthetic"}
+{"event_id":"MON-0002","timestamp":"2026-01-01T10:05:00Z","event_type":"network-alert","severity":"low","source":"synthetic-suricata-equivalent","summary":"Synthetic network policy alert example","related_module":"CYBRITE","confidentiality":"synthetic"}

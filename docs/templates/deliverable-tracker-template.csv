@@ -1,0 +1,2 @@
+deliverable_id,title,owner,due_month,artifact_type,artifact_link,confidentiality,status,approval_evidence,notes
+D-PUBLIC-001,Public glossary,example-owner,M1,Markdown,docs/glossary.md,public-safe,planned,,

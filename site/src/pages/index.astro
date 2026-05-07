@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="NIS2COMPASS | Public NIS2 Readiness Knowledge Hub">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Public dissemination hub</p>
+      <h1>NIS2COMPASS</h1>
+      <p class="lead">A public-safe knowledge base for NIS2 readiness, evidence organization, CYberSynchrony alignment, and reusable cybersecurity improvement templates.</p>
+      <div class="actions">
+        <a class="button" href="/docs/">Open documentation</a>
+        <a class="button secondary" href="/resources/">Browse artifacts</a>
+      </div>
+    </div>
+    <div class="evidence-map" aria-label="Evidence flow overview">
+      <div class="map-row">
+        <div class="map-label">NIS2</div>
+        <div class="map-content">
+          <strong>Controls and obligations</strong>
+          <span>Plain-language readiness areas and public evidence templates.</span>
+        </div>
+      </div>
+      <div class="map-row">
+        <div class="map-label">Evidence</div>
+        <div class="map-content">
+          <strong>Records that prove work</strong>
+          <span>CSV registers, JSON schemas, synthetic examples, and hash manifests.</span>
+        </div>
+      </div>
+      <div class="map-row">
+        <div class="map-label">Modules</div>
+        <div class="map-content">
+          <strong>CYberSynchrony alignment</strong>
+          <span>CYBERGOPLUS, CYBRITE, CYBERRA, CYRESCUE, CYBERWISE, and CROSS-CORE.</span>
+        </div>
+      </div>
+      <div class="map-row">
+        <div class="map-label">Public</div>
+        <div class="map-content">
+          <strong>Reusable dissemination</strong>
+          <span>Playbooks and templates without pilot-sensitive data.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>What this project publishes</h2>
+      <p>NIS2COMPASS publishes public-safe material that helps teams learn, prepare, and structure evidence without exposing pilot organizations or sensitive cybersecurity data.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Plain-language NIS2 guidance</h3>
+        <p>Rendered documentation pages with a navigation tree, not raw Markdown files.</p>
+      </article>
+      <article class="card">
+        <h3>Reusable templates</h3>
+        <p>CSV and Markdown templates for control registers, evidence records, risk registers, release checks, and Rules of Engagement.</p>
+      </article>
+      <article class="card">
+        <h3>Synthetic examples</h3>
+        <p>Fake monitoring, threat-intelligence, vulnerability, and awareness examples for demos and schema testing.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="section-header">
+      <h2>CYberSynchrony alignment</h2>
+      <p>NIS2COMPASS is aligned with CYberSynchrony module families for compliance evidence, monitoring, threat intelligence, resilience validation, awareness, and secure exchange.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>CYBERGOPLUS</h3>
+        <p>Governance, policy, compliance, and audit evidence.</p>
+      </article>
+      <article class="card">
+        <h3>CYBRITE and CYBERRA</h3>
+        <p>Monitoring, early detection, threat intelligence, and response playbook support.</p>
+      </article>
+      <article class="card">
+        <h3>CYRESCUE and CYBERWISE</h3>
+        <p>Validation, resilience, awareness, training, and human-risk metrics.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Public boundary</h2>
+      <p>This website contains public-safe material only. Real pilot data, raw logs, credentials, exploit details, private architecture, and internal funder records are not published here.</p>
+    </div>
+    <div class="callout">
+      <strong>Default rule:</strong> if a file could help identify, attack, embarrass, or expose a pilot organization or person, it does not belong in the public repository.
+    </div>
+  </section>
+</BaseLayout>

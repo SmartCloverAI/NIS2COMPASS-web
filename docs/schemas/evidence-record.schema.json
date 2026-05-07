@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nis2compass.org/schemas/evidence-record.schema.json",
+  "title": "NIS2COMPASS Evidence Record",
+  "type": "object",
+  "required": ["evidence_id", "title", "owner", "date_collected", "confidentiality", "review_status"],
+  "properties": {
+    "evidence_id": { "type": "string" },
+    "title": { "type": "string" },
+    "owner": { "type": "string" },
+    "date_collected": { "type": "string", "format": "date" },
+    "source_tool": { "type": "string" },
+    "related_control": { "type": "string" },
+    "related_module": { "type": "string" },
+    "confidentiality": { "enum": ["public-safe", "synthetic", "funder-facing", "internal", "pilot-sensitive"] },
+    "review_status": { "enum": ["draft", "reviewed", "approved", "rejected", "superseded"] },
+    "hash_sha256": { "type": "string" },
+    "artifact_link": { "type": "string" }
+  }
+}

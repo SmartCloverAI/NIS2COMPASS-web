@@ -1,0 +1,17 @@
+{
+  "type": "bundle",
+  "id": "bundle--00000000-0000-4000-8000-000000000001",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--00000000-0000-4000-8000-000000000002",
+      "created": "2026-01-01T00:00:00Z",
+      "modified": "2026-01-01T00:00:00Z",
+      "name": "Synthetic suspicious domain",
+      "pattern": "[domain-name:value = 'example.invalid']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    }
+  ]
+}

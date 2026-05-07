@@ -1,0 +1,2 @@
+item_id,artifact_link,reviewer,review_date,public_value_confirmed,no_pilot_data,no_personal_data,no_credentials,no_raw_findings,no_sensitive_architecture,approved,notes
+PUB-001,docs/example.md,example-reviewer,2026-01-01,yes,yes,yes,yes,yes,yes,yes,Example row only
