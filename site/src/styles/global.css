@@ -240,9 +240,19 @@ h3 {
   color: white;
 }
 
-.band p,
+.band > .section-header p,
 .band .muted {
   color: #dbe6df;
+}
+
+.band .card {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.band .card p {
+  color: var(--muted);
 }
 
 .resource-list {
