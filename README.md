@@ -27,11 +27,11 @@ Recommended minimal runtime for the initial documentation site:
 
 | Item | Value |
 | --- | --- |
-| Deployment mode | Clone this Git repository and run commands from `site/` |
+| Deployment mode | Clone this Git repository and run commands from the repository root |
 | Project Dockerfile | Not required and intentionally not used |
 | R1 WAR base runtime image | Node.js 22 Alpine or equivalent Node.js 22 runtime |
-| Build command | `cd site && npm ci && npm run build` |
-| Start command | `cd site && npm run start` |
+| Single run command | `./start-website.sh` |
+| Separate build command, only if the runner requires one | `./start-website.sh build` |
 | Port | `8080`, or the platform-provided `PORT` variable |
 | CPU | `0.5` vCPU |
 | Memory | `512 MB` RAM |
@@ -41,6 +41,30 @@ Recommended minimal runtime for the initial documentation site:
 | npm | `11.x` tested locally |
 
 The app is intentionally static and small. Astro is used at build time, and `sirv-cli` serves the generated `dist/` folder at runtime. The first deployment should not need a database, background worker, queue, secret store, persistent volume, Dockerfile, image registry, or pre-built container image.
+
+## Root Commands
+
+Use this command from the repository root. It intentionally avoids `cd site` so a deployment runner can clone the repo and execute one clear command.
+
+```bash
+./start-website.sh
+```
+
+With no argument, `./start-website.sh` installs dependencies with `npm ci`, builds the static site into `site/dist`, and serves it on `0.0.0.0:${PORT:-8080}`. To override the port, run `PORT=8090 ./start-website.sh`.
+
+Useful explicit commands for operators:
+
+```bash
+./start-website.sh build
+./start-website.sh start
+./start-website.sh dev
+```
+
+Use `./start-website.sh build` when a platform has a separate build phase. Use `./start-website.sh start` only when `site/dist` already exists and you want to serve it without forcing a rebuild.
+
+## Cloudflare Static Hosting
+
+For Cloudflare Pages or Cloudflare Workers Static Assets, do not use a Node start command. Use the repository root as the project root, set the build command to `./start-website.sh build`, set the build output directory or assets directory to `site/dist`, and set Node.js to `22.x`.
 
 ## Repository Map
 
@@ -86,11 +110,7 @@ See [`PUBLICATION_POLICY.md`](PUBLICATION_POLICY.md) before publishing new mater
 ## Local Site Commands
 
 ```bash
-cd site
-npm install
-npm run dev
-npm run build
-npm run start
+./start-website.sh
 ```
 
 The local preview server listens on `0.0.0.0:8080` by default.

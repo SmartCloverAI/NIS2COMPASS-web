@@ -13,35 +13,31 @@ This directory contains the initial public website for NIS2COMPASS. It mirrors t
 | Memory | `512 MB` RAM |
 | Disk | `1 GB` minimum, `2 GB` recommended for install/build cache |
 | Port | `8080`, or platform-provided `PORT` |
-| Build command | `npm ci && npm run build` |
-| Start command | `npm run start` |
+| Single run command from repository root | `./start-website.sh` |
+| Separate build command, only if the runner requires one | `./start-website.sh build` |
 | Node.js | `22.x` |
 
 ## Commands
 
 ```bash
-npm install
-npm run dev
-npm run build
-npm run start
+./start-website.sh
 ```
 
-`npm run start` serves the static build from `dist/` with `sirv-cli` on `0.0.0.0:${PORT:-8080}`.
+Run this command from the repository root. With no argument, `./start-website.sh` installs dependencies, builds `site/dist/`, and serves the static build with `sirv-cli` on `0.0.0.0:${PORT:-8080}`.
 
 The `predev` and `prebuild` scripts copy `../docs` into `site/public/artifacts/docs` so the deployed website mirrors the public documentation tree and exposes raw templates/schemas under `/artifacts/docs/`.
 
 ## Ratio1 Worker App Runner Notes
 
-Use the full repository clone as the source and `site/` as the working directory. This matters because the build renders Markdown from the root `docs/` folder into the website.
+Use the full repository clone as the source and the repository root as the working directory. This matters because the build renders Markdown from the root `docs/` folder into the website.
 
 Recommended R1 WAR command sequence:
 
 ```bash
-cd site
-npm ci
-npm run build
-npm run start
+./start-website.sh
 ```
+
+For Cloudflare Pages or Cloudflare Workers Static Assets, use `./start-website.sh build` as the build command and `site/dist` as the static output/assets directory. Cloudflare should not run `./start-website.sh start` because it serves static assets directly after deployment.
 
 The app is intentionally static and small. It should not require a database, persistent storage, background jobs, secrets, Dockerfile, image registry, or pre-built image for the initial release.
 

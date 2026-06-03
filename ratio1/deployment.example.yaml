@@ -7,10 +7,10 @@ source:
   clone: full-repository
 runtime:
   runner: worker_app_runner
-  working_directory: site
+  working_directory: .
   base_runtime: nodejs-22-alpine
-  build_command: npm ci && npm run build
-  start_command: npm run start
+  # Optional separate build phase, if the active WAR schema requires one: ./start-website.sh build
+  start_command: ./start-website.sh
   port: 8080
 resources:
   cpu: 0.5
