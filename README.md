@@ -1,5 +1,7 @@
 # NIS2COMPASS
 
+<img src="site/public/logo.svg" width="72" height="72" alt="NIS2COMPASS logo">
+
 NIS2COMPASS is the public dissemination repository for an 8-month NIS2 readiness, evidence, and cybersecurity improvement project funded by the CYberSynchrony consortium through the Financial Support to Third Parties open-call instrument.
 
 This repository contains public-safe documentation, reusable templates, synthetic examples, and the source for the project website.
@@ -11,6 +13,8 @@ Content development: SmartClover SRL.
 Copyright: AI STM Learning SRL and SmartClover SRL, as the NIS2COMPASS consortium partners.
 
 ## Public Website
+
+Project logo: [`site/public/logo.svg`](site/public/logo.svg). The same SVG is used by the website header and browser icon.
 
 Preferred domain:
 

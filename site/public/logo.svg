@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="nis2compass-logo-title nis2compass-logo-desc">
+  <title id="nis2compass-logo-title">NIS2COMPASS logo</title>
+  <desc id="nis2compass-logo-desc">A compact compass trust mark for NIS2COMPASS with a circular readiness ring, northeast navigation needle, and small trust anchor in green, blue, gold, and white.</desc>
+  <rect x="8" y="8" width="112" height="112" rx="18" fill="#F5F8F1"/>
+  <circle cx="64" cy="64" r="45" fill="#FFFFFF" stroke="#D8E1DA" stroke-width="4"/>
+  <path d="M64 23A41 41 0 0 1 105 64" fill="none" stroke="#1F7A5A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M23 64A41 41 0 0 0 64 105" fill="none" stroke="#245B89" stroke-width="8" stroke-linecap="round"/>
+  <path d="M64 30V38M98 64H90M64 98V90M30 64H38" fill="none" stroke="#56645A" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+  <path d="M91 37L72.5 78.5L64 64L49.5 55.5L91 37Z" fill="#245B89"/>
+  <path d="M37 91L55.5 49.5L64 64L78.5 72.5L37 91Z" fill="#1F7A5A" opacity="0.26"/>
+  <circle cx="64" cy="64" r="8.5" fill="#B8841F"/>
+  <circle cx="64" cy="64" r="3.25" fill="#FFFFFF"/>
+</svg>

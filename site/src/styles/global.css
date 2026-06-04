@@ -56,15 +56,12 @@ a {
 }
 
 .brand-mark {
-  display: grid;
   width: 2.25rem;
   height: 2.25rem;
-  place-items: center;
+  display: block;
+  flex: 0 0 auto;
   border-radius: 6px;
-  background: var(--green);
-  color: white;
-  font-size: 0.9rem;
-  letter-spacing: 0;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -92,6 +89,10 @@ a {
   min-height: calc(100vh - 5rem);
   padding: clamp(3rem, 7vw, 7rem) clamp(1rem, 5vw, 5rem);
   background: var(--soft);
+}
+
+.hero > * {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -504,6 +505,16 @@ th {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(2.45rem, 12vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem;
   }
 
   .site-nav {

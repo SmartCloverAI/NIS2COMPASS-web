@@ -2,6 +2,8 @@
 
 This directory contains the initial public website for NIS2COMPASS. It mirrors the public dissemination repository by presenting the project overview, CYberSynchrony alignment, public taxonomy, playbooks, templates, schemas, synthetic examples, and deployment notes.
 
+The website logo and browser icon use [`public/logo.svg`](public/logo.svg), based on the operator-approved Compass Trust Mark.
+
 ## Runtime Baseline
 
 | Item | Value |
