@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nis2compass.org/schemas/nis2-control.schema.json",
+  "$id": "https://www.nis2compass.eu/schemas/nis2-control.schema.json",
   "title": "NIS2COMPASS Control",
   "type": "object",
   "required": ["control_id", "control_area", "plain_requirement"],

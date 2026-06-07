@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nis2compass.org/schemas/monitoring-event-sanitized.schema.json",
+  "$id": "https://www.nis2compass.eu/schemas/monitoring-event-sanitized.schema.json",
   "title": "NIS2COMPASS Sanitized Monitoring Event",
   "type": "object",
   "required": ["event_id", "timestamp", "event_type", "severity", "source", "confidentiality"],

@@ -16,10 +16,10 @@ Copyright: AI STM Learning SRL and SmartClover SRL, as the NIS2COMPASS consortiu
 
 Project logo: [`site/public/logo.svg`](site/public/logo.svg). The same SVG is used by the website header and browser icon.
 
-Preferred domain:
+Preferred public hub:
 
-- Primary: `nis2compass.org`
-- Recommended redirect: `nis2compass.eu`, if available and eligible
+- Primary: `www.nis2compass.eu`
+- Recommended redirect: `nis2compass.eu` to `www.nis2compass.eu` once apex DNS is configured
 - Optional defensive redirect: `nis2compass.com`
 - Optional short-link redirect only: `nis2compass.link`
 
@@ -77,7 +77,7 @@ docs/
   Public project documentation, taxonomy, playbooks, templates, schemas, and synthetic examples.
 
 site/
-  Astro website source for nis2compass.org or the selected public domain.
+  Astro website source for www.nis2compass.eu or the selected public domain.
 
 ratio1/
   Worker App Runner deployment notes and an example repo-clone deployment descriptor.

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nis2compass.org/schemas/awareness-metric.schema.json",
+  "$id": "https://www.nis2compass.eu/schemas/awareness-metric.schema.json",
   "title": "NIS2COMPASS Awareness Metric",
   "type": "object",
   "required": ["metric_id", "metric_name", "period", "value", "unit", "confidentiality"],
