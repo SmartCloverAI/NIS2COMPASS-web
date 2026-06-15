@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getBlogs } from "../lib/docs.mjs";
+
+const blogs = await getBlogs();
+const pinnedBlog = blogs.find((blog) => blog.pinned);
 ---
 <BaseLayout title="NIS2COMPASS | Public NIS2 Readiness Knowledge Hub">
   <section class="hero">
@@ -64,6 +68,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </article>
     </div>
   </section>
+
+  {pinnedBlog && (
+    <section class="section blogs-home" id="blogs">
+      <div class="section-header">
+        <p class="eyebrow">Blogs</p>
+        <h2>Latest Public Article</h2>
+        <p>Public-safe narrative articles explain what NIS2COMPASS is learning and building without exposing pilot-sensitive material.</p>
+      </div>
+      <article class="blog-card blog-card-featured">
+        {pinnedBlog.heroImage && <img src={pinnedBlog.heroImage} alt="" loading="lazy" />}
+        <div>
+          <span class="pin-label">Pinned</span>
+          <h3><a href={pinnedBlog.route}>{pinnedBlog.title}</a></h3>
+          <p>{pinnedBlog.subtitle}</p>
+          <p class="canonical-note">Canonical source: {pinnedBlog.canonicalSource}</p>
+          <a class="button secondary" href={pinnedBlog.route}>Read article</a>
+        </div>
+      </article>
+    </section>
+  )}
 
   <section class="section band">
     <div class="section-header">

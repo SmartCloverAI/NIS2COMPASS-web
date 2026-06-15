@@ -1,0 +1,29 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { getBlogs } from "../../lib/docs.mjs";
+
+export async function getStaticPaths() {
+  const blogs = await getBlogs();
+  return blogs.map((blog) => ({
+    params: { slug: blog.slug },
+    props: { blog }
+  }));
+}
+
+const { blog } = Astro.props;
+---
+<DocsLayout title={blog.title} currentSlug={`blog:${blog.slug}`} description={blog.subtitle || "NIS2COMPASS public blog article."}>
+  <div class="doc-meta">
+    <span>{blog.sourcePath}</span>
+    <span>Canonical source: {blog.canonicalSource}</span>
+  </div>
+  <article class="rendered-doc blog-article">
+    <header class="blog-article-header">
+      {blog.pinned && <span class="pin-label">Pinned</span>}
+      <h1>{blog.title}</h1>
+      {blog.subtitle && <p class="lead compact">{blog.subtitle}</p>}
+      <p class="blog-meta">{blog.date} · {blog.author}{blog.partner ? ` · Partner: ${blog.partner}` : ""}</p>
+    </header>
+    <div set:html={blog.html} />
+  </article>
+</DocsLayout>

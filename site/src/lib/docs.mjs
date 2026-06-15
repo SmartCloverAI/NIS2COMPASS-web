@@ -5,6 +5,7 @@ import { marked } from "marked";
 const siteRoot = process.cwd();
 const repoRoot = resolve(siteRoot, "..");
 const docsRoot = resolve(repoRoot, "docs");
+const blogsRoot = resolve(repoRoot, "blogs");
 
 const navGroups = [
   {
@@ -15,6 +16,13 @@ const navGroups = [
       ["nis2-in-plain-language", "NIS2 In Plain Language"],
       ["cybersynchrony-alignment", "CYberSynchrony Alignment"],
       ["glossary", "Glossary"]
+    ]
+  },
+  {
+    title: "Blogs",
+    items: [
+      ["blog:index", "Blog Index", "/blogs/"],
+      ["blog:n2c-article-1", "Pinned: Turning Cybersecurity Work Into Verifiable Proof", "/blogs/n2c-article-1/"]
     ]
   },
   {
@@ -86,6 +94,10 @@ function slugToRoute(slug) {
   return slug === "index" ? "/docs/" : `/docs/${slug}/`;
 }
 
+function blogSlugToRoute(slug) {
+  return `/blogs/${slug}/`;
+}
+
 function titleFromMarkdown(markdown, slug) {
   const match = markdown.match(/^#\s+(.+)$/m);
   if (match) {
@@ -94,8 +106,30 @@ function titleFromMarkdown(markdown, slug) {
   return basename(slug).replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
+function parseFrontmatter(markdown) {
+  if (!markdown.startsWith("---\n")) {
+    return { data: {}, body: markdown };
+  }
+
+  const end = markdown.indexOf("\n---\n", 4);
+  if (end === -1) {
+    return { data: {}, body: markdown };
+  }
+
+  const frontmatter = markdown.slice(4, end).trim();
+  const body = markdown.slice(end + 5).replace(/^\s+/, "");
+  const data = {};
+  for (const line of frontmatter.split("\n")) {
+    const match = line.match(/^([A-Za-z0-9_-]+):\s*"?([^"]*)"?$/);
+    if (match) {
+      data[match[1]] = match[2];
+    }
+  }
+  return { data, body };
+}
+
 function normalizeDocLink(currentSlug, href) {
-  if (!href || href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:")) {
+  if (!href || href.startsWith("http") || href.startsWith("/") || href.startsWith("#") || href.startsWith("mailto:")) {
     return href;
   }
 
@@ -117,6 +151,41 @@ function normalizeDocLink(currentSlug, href) {
 
 function rewriteInternalLinks(html, currentSlug) {
   return html.replace(/href="([^"]+)"/g, (_, href) => `href="${normalizeDocLink(currentSlug, href)}"`);
+}
+
+function blogFileToSlug(file) {
+  const rel = relative(blogsRoot, file).split("\\").join("/");
+  const withoutExt = rel.replace(/\.md$/, "");
+  if (withoutExt.endsWith("/article_1")) {
+    return dirname(withoutExt).split("\\").join("/");
+  }
+  if (withoutExt.endsWith("/index")) {
+    return withoutExt.replace(/\/index$/, "");
+  }
+  return withoutExt;
+}
+
+function normalizeBlogLink(currentSlug, href) {
+  if (!href || href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:")) {
+    return href;
+  }
+
+  if (href.endsWith(".md")) {
+    const base = dirname(currentSlug);
+    const normalized = posix.normalize(posix.join(base === "." ? "" : base, href));
+    const slug = normalized.replace(/\.md$/, "").replace(/\/article_1$/, "").replace(/\/index$/, "");
+    return blogSlugToRoute(slug);
+  }
+
+  const base = currentSlug === "index" ? "" : currentSlug;
+  const normalized = posix.normalize(posix.join(base, href));
+  return `/artifacts/blogs/${normalized}`;
+}
+
+function rewriteBlogLinks(html, currentSlug) {
+  return html
+    .replace(/href="([^"]+)"/g, (_, href) => `href="${normalizeBlogLink(currentSlug, href)}"`)
+    .replace(/src="([^"]+)"/g, (_, src) => `src="${normalizeBlogLink(currentSlug, src)}"`);
 }
 
 export async function getDocs() {
@@ -148,4 +217,35 @@ export function getDocsNav() {
 
 export function getArtifactLinks() {
   return artifactLinks;
+}
+
+export async function getBlogs() {
+  const files = (await walk(blogsRoot)).filter((file) => extname(file) === ".md");
+  const blogs = await Promise.all(files.map(async (file) => {
+    const slug = blogFileToSlug(file);
+    const markdown = await readFile(file, "utf8");
+    const { data, body } = parseFrontmatter(markdown);
+    const rawHtml = await marked.parse(body, { gfm: true });
+    return {
+      slug,
+      route: blogSlugToRoute(slug),
+      title: data.title || titleFromMarkdown(body, slug),
+      subtitle: data.subtitle || "",
+      date: data.date || "",
+      author: data.author || "",
+      partner: data.partner || "",
+      heroImage: data.hero_image ? `/artifacts/blogs/${slug}/${data.hero_image}` : "",
+      html: rewriteBlogLinks(rawHtml, slug),
+      sourcePath: relative(repoRoot, file).split("\\").join("/"),
+      canonicalSource: `N2C-reports/blog-articles/${slug}/article_1.md`,
+      pinned: slug === "n2c-article-1"
+    };
+  }));
+
+  return blogs.sort((a, b) => Number(b.pinned) - Number(a.pinned) || b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+}
+
+export async function getBlogBySlug(slug) {
+  const blogs = await getBlogs();
+  return blogs.find((blog) => blog.slug === slug);
 }

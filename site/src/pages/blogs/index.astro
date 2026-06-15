@@ -1,0 +1,48 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { getBlogs } from "../../lib/docs.mjs";
+
+const blogs = await getBlogs();
+const pinnedBlogs = blogs.filter((blog) => blog.pinned);
+const laterBlogs = blogs.filter((blog) => !blog.pinned);
+---
+<DocsLayout title="Blogs" currentSlug="blog:index" description="NIS2COMPASS public blog articles and dissemination notes.">
+  <div class="doc-meta">
+    <span>blogs/</span>
+  </div>
+  <div class="rendered-doc blog-index">
+    <p class="eyebrow">Public dissemination</p>
+    <h1>Blogs</h1>
+    <p class="lead compact">Narrative articles, project notes, and public-safe explanations from the NIS2COMPASS dissemination work. The report repository remains the canonical source for each approved article.</p>
+
+    <section class="blog-list" aria-label="Pinned blog articles">
+      <h2>Pinned</h2>
+      {pinnedBlogs.map((blog) => (
+        <article class="blog-card">
+          {blog.heroImage && <img src={blog.heroImage} alt="" loading="lazy" />}
+          <div>
+            <p class="blog-meta">{blog.date} · {blog.author}</p>
+            <h3><a href={blog.route}>{blog.title}</a></h3>
+            {blog.subtitle && <p>{blog.subtitle}</p>}
+            <p class="canonical-note">Canonical source: {blog.canonicalSource}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    {laterBlogs.length > 0 && (
+      <section class="blog-list" aria-label="More blog articles">
+        <h2>More Articles</h2>
+        {laterBlogs.map((blog) => (
+          <article class="blog-card">
+            <div>
+              <p class="blog-meta">{blog.date} · {blog.author}</p>
+              <h3><a href={blog.route}>{blog.title}</a></h3>
+              {blog.subtitle && <p>{blog.subtitle}</p>}
+            </div>
+          </article>
+        ))}
+      </section>
+    )}
+  </div>
+</DocsLayout>

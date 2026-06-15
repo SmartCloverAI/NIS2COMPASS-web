@@ -278,6 +278,79 @@ h3 {
   color: var(--muted);
 }
 
+.blogs-home {
+  background: #fbfcfa;
+}
+
+.blog-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.85fr) minmax(0, 1.15fr);
+  gap: 1.2rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+.blog-card-featured {
+  max-width: 70rem;
+  box-shadow: var(--shadow);
+}
+
+.blog-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--soft);
+}
+
+.blog-card h3 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.35rem, 2.4vw, 2.15rem);
+}
+
+.blog-card p {
+  color: var(--muted);
+}
+
+.blog-meta,
+.canonical-note {
+  margin: 0.25rem 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.canonical-note {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.pin-label {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.18rem 0.48rem;
+  border: 1px solid rgba(184, 132, 31, 0.4);
+  border-radius: 999px;
+  background: #fff8e8;
+  color: #7a5611;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lead.compact {
+  max-width: 52rem;
+  font-size: 1.05rem;
+}
+
 .docs-shell {
   display: grid;
   grid-template-columns: 19rem minmax(0, 1fr);
@@ -351,6 +424,9 @@ h3 {
 }
 
 .doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
   margin-bottom: 1rem;
   color: var(--muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -434,6 +510,27 @@ h3 {
   color: var(--muted);
 }
 
+.rendered-doc img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.blog-article {
+  max-width: 66rem;
+}
+
+.blog-article-header {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-article-header h1 {
+  max-width: 22ch;
+  font-size: clamp(2rem, 3.6vw, 3.35rem);
+}
+
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -482,6 +579,10 @@ th {
   }
 
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card {
     grid-template-columns: 1fr;
   }
 

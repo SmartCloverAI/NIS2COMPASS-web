@@ -16,9 +16,9 @@ const artifactLinks = getArtifactLinks();
         <div class="sidebar-block">
           <h2>{group.title}</h2>
           <ul>
-            {group.items.map(([slug, label]) => (
+            {group.items.map(([slug, label, href]) => (
               <li>
-                <a class:list={{ active: slug === currentSlug }} href={slug === "index" ? "/docs/" : `/docs/${slug}/`}>
+                <a class:list={{ active: slug === currentSlug }} href={href || (slug === "index" ? "/docs/" : `/docs/${slug}/`)}>
                   {label}
                 </a>
               </li>
