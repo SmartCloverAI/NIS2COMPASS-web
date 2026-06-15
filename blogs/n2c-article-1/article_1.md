@@ -41,8 +41,8 @@ The project does not try to replace every security tool. That would be the wrong
 
 ## The Partnership: SmartClover And AI STM Learning
 
-<aside class="article-pullquote article-pullquote--large" aria-hidden="true" style="margin: 2.5rem 0; padding: 0.2rem 0 0.4rem; border-top: 0.18rem solid #1f7a5a; border-bottom: 0.18rem solid #1f7a5a; color: #123f32; font-size: clamp(2.5rem, 8vw, 5rem); line-height: 0.96; font-weight: 800; letter-spacing: -0.02em;">
-<p style="margin: 0.35rem 0;">"... signals become reviewable evidence."</p>
+<aside class="article-pullquote" aria-hidden="true" style="margin: 2.4rem 0; padding: 1rem 1.25rem; border-left: 0.24rem solid #1f7a5a; background: #eef7f2; color: #123f32; font-size: 1.35rem; line-height: 1.35; font-style: italic; font-weight: 650;">
+<p style="margin: 0;">"... signals become reviewable evidence."</p>
 </aside>
 
 NIS2COMPASS works because the roles are deliberately different.
@@ -74,7 +74,7 @@ Inside NIS2COMPASS, SmartClover's work is expected to include monitoring and det
 
 That last step is where compliance becomes less theatrical and more operational.
 
-<blockquote class="article-miniquote" aria-hidden="true" style="margin: 1.6rem 0; padding: 0.8rem 1.2rem; border-left: 0.22rem solid #b8841f; color: #5c4a18; font-size: 1.25rem; line-height: 1.45; font-style: italic;">
+<blockquote class="article-miniquote" aria-hidden="true" style="margin: 2.4rem 0; padding: 1rem 1.25rem; border-left: 0.24rem solid #b8841f; background: #fff8e8; color: #5c4a18; font-size: 1.35rem; line-height: 1.35; font-style: italic; font-weight: 650;">
 <p style="margin: 0;">"... make claims traceable ..."</p>
 </blockquote>
 
@@ -120,7 +120,7 @@ Public outputs may include:
 
 The public outputs should help a team understand how to organize evidence, what kinds of records matter, and how monitoring, testing, remediation, training, and governance can be connected.
 
-<aside class="article-pullquote" aria-hidden="true" style="margin: 2.2rem 0; padding: 1rem 1.2rem; border-left: 0.3rem solid #245b89; background: #eef5fb; color: #163d5f; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.01em;">
+<aside class="article-pullquote" aria-hidden="true" style="margin: 2.4rem 0; padding: 1rem 1.25rem; border-left: 0.24rem solid #245b89; background: #eef5fb; color: #163d5f; font-size: 1.35rem; line-height: 1.35; font-style: italic; font-weight: 650;">
 <p style="margin: 0;">"... a human reviewer must inspect and approve ..."</p>
 </aside>
 
@@ -134,7 +134,7 @@ That is not secrecy for its own sake. It is basic cybersecurity hygiene. A proje
 
 ## The Practical Result We Want
 
-<blockquote class="article-miniquote" aria-hidden="true" style="margin: 1.6rem 0; padding: 0.8rem 1.2rem; border-left: 0.22rem solid #1f7a5a; color: #123f32; font-size: 1.35rem; line-height: 1.4; font-style: italic;">
+<blockquote class="article-miniquote" aria-hidden="true" style="margin: 2.4rem 0; padding: 1rem 1.25rem; border-left: 0.24rem solid #1f7a5a; background: #eef7f2; color: #123f32; font-size: 1.35rem; line-height: 1.35; font-style: italic; font-weight: 650;">
 <p style="margin: 0;">"... the difference between activity and proof."</p>
 </blockquote>
 
