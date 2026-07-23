@@ -6,16 +6,41 @@ const siteRoot = process.cwd();
 const repoRoot = resolve(siteRoot, "..");
 const docsRoot = resolve(repoRoot, "docs");
 const blogsRoot = resolve(repoRoot, "blogs");
+const toolRegisterPath = resolve(docsRoot, "cybersynchrony/tool-register.json");
+const publicationsPath = resolve(docsRoot, "publications.json");
+const newsPath = resolve(docsRoot, "news.json");
 
 const navGroups = [
   {
     title: "Start Here",
     items: [
       ["index", "Documentation Home"],
+      ["news:index", "Project News", "/news/"],
       ["project-overview", "Project Overview"],
       ["nis2-in-plain-language", "NIS2 In Plain Language"],
-      ["cybersynchrony-alignment", "CYberSynchrony Alignment"],
-      ["glossary", "Glossary"]
+      ["glossary", "Glossary"],
+      ["resources:index", "Resource Directory", "/resources/"]
+    ]
+  },
+  {
+    title: "Project Progress",
+    items: [
+      ["progress", "Progress Overview"],
+      ["progress/2026-06-month-1", "Month 1: Foundations"]
+    ]
+  },
+  {
+    title: "CYberSynchrony Modules",
+    items: [
+      ["cybersynchrony-alignment", "Six-Module Overview"],
+      ["cybersynchrony", "CYberSynchrony Public Results"],
+      ["tools:index", "Public Tool References", "/tools/"],
+      ["cybersynchrony/modules/cyrescue", "CYRESCUE"],
+      ["cybersynchrony/modules/cyberra", "CYBERRA"],
+      ["cybersynchrony/modules/cybrite", "CYBRITE"],
+      ["cybersynchrony/modules/cross-core", "CROSS-CORE"],
+      ["cybersynchrony/modules/cyberwise", "CYBERWISE"],
+      ["cybersynchrony/modules/cybergoplus", "CYBERGOPLUS"]
     ]
   },
   {
@@ -63,8 +88,14 @@ const navGroups = [
 const artifactLinks = [
   ["Evidence record CSV", "/artifacts/docs/templates/evidence-record-template.csv"],
   ["Evidence record schema", "/artifacts/docs/schemas/evidence-record.schema.json"],
-  ["Synthetic monitoring JSONL", "/artifacts/docs/examples/synthetic-monitoring-events.jsonl"]
+  ["Synthetic monitoring JSONL", "/artifacts/docs/examples/synthetic-monitoring-events.jsonl"],
+  ["Public tool register JSON", "/artifacts/docs/cybersynchrony/tool-register.json"],
+  ["Project news register JSON", "/artifacts/docs/news.json"]
 ];
+
+async function readJson(path) {
+  return JSON.parse(await readFile(path, "utf8"));
+}
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -128,41 +159,27 @@ function parseFrontmatter(markdown) {
   return { data, body };
 }
 
-function normalizeDocLink(currentSlug, href) {
+function normalizeDocLink(sourceDirectory, href) {
   if (!href || href.startsWith("http") || href.startsWith("/") || href.startsWith("#") || href.startsWith("mailto:")) {
     return href;
   }
 
   if (href.endsWith(".md")) {
-    const base = currentSlug === "index" ? "" : dirname(currentSlug);
-    const normalized = posix.normalize(posix.join(base === "." ? "" : base, href));
+    const normalized = posix.normalize(posix.join(sourceDirectory, href));
     const slug = normalized.replace(/\.md$/, "").replace(/\/README$/, "");
     return slug === "index" ? "/docs/" : `/docs/${slug}/`;
   }
 
   if (/\.(csv|json|jsonl|yaml|yml)$/i.test(href)) {
-    const base = currentSlug === "index" ? "" : dirname(currentSlug);
-    const normalized = posix.normalize(posix.join(base === "." ? "" : base, href));
+    const normalized = posix.normalize(posix.join(sourceDirectory, href));
     return `/artifacts/docs/${normalized}`;
   }
 
   return href;
 }
 
-function rewriteInternalLinks(html, currentSlug) {
-  return html.replace(/href="([^"]+)"/g, (_, href) => `href="${normalizeDocLink(currentSlug, href)}"`);
-}
-
-function blogFileToSlug(file) {
-  const rel = relative(blogsRoot, file).split("\\").join("/");
-  const withoutExt = rel.replace(/\.md$/, "");
-  if (withoutExt.endsWith("/article_1")) {
-    return dirname(withoutExt).split("\\").join("/");
-  }
-  if (withoutExt.endsWith("/index")) {
-    return withoutExt.replace(/\/index$/, "");
-  }
-  return withoutExt;
+function rewriteInternalLinks(html, sourceDirectory) {
+  return html.replace(/href="([^"]+)"/g, (_, href) => `href="${normalizeDocLink(sourceDirectory, href)}"`);
 }
 
 function normalizeBlogLink(currentSlug, href) {
@@ -192,14 +209,14 @@ export async function getDocs() {
   const files = (await walk(docsRoot)).filter((file) => extname(file) === ".md");
   const docs = await Promise.all(files.map(async (file) => {
     const slug = fileToSlug(file);
+    const sourceDirectory = relative(docsRoot, dirname(file)).split("\\").join("/").replace(/^\.$/, "");
     const markdown = await readFile(file, "utf8");
     const rawHtml = await marked.parse(markdown, { gfm: true });
     return {
       slug,
       route: slugToRoute(slug),
       title: titleFromMarkdown(markdown, slug),
-      html: rewriteInternalLinks(rawHtml, slug),
-      sourcePath: relative(repoRoot, file).split("\\").join("/")
+      html: rewriteInternalLinks(rawHtml, sourceDirectory)
     };
   }));
 
@@ -219,26 +236,44 @@ export function getArtifactLinks() {
   return artifactLinks;
 }
 
+export async function getToolRegister() {
+  return readJson(toolRegisterPath);
+}
+
+export async function getPublications() {
+  const index = await readJson(publicationsPath);
+  return [...index.publications].sort((a, b) => a.featured_order - b.featured_order || b.date.localeCompare(a.date));
+}
+
+export async function getNews() {
+  const register = await readJson(newsPath);
+  return {
+    ...register,
+    items: [...register.items].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))
+  };
+}
+
 export async function getBlogs() {
-  const files = (await walk(blogsRoot)).filter((file) => extname(file) === ".md");
-  const blogs = await Promise.all(files.map(async (file) => {
-    const slug = blogFileToSlug(file);
+  const publications = await getPublications();
+  const localPublications = publications.filter((publication) => publication.kind === "local-article");
+  const blogs = await Promise.all(localPublications.map(async (metadata) => {
+    const file = resolve(repoRoot, metadata.source_file);
+    const slug = metadata.slug;
     const markdown = await readFile(file, "utf8");
-    const { data, body } = parseFrontmatter(markdown);
+    const { body } = parseFrontmatter(markdown);
     const rawHtml = await marked.parse(body, { gfm: true });
     return {
       slug,
       route: blogSlugToRoute(slug),
-      title: data.title || titleFromMarkdown(body, slug),
-      subtitle: data.subtitle || "",
-      date: data.date || "",
-      author: data.author || "",
-      partner: data.partner || "",
-      heroImage: data.hero_image ? `/artifacts/blogs/${slug}/${data.hero_image}` : "",
+      title: metadata.title,
+      subtitle: metadata.summary,
+      date: metadata.date,
+      author: metadata.publisher,
+      partner: metadata.partner,
+      heroImage: metadata.image || "",
       html: rewriteBlogLinks(rawHtml, slug),
-      sourcePath: relative(repoRoot, file).split("\\").join("/"),
-      canonicalSource: `N2C-reports/blog-articles/${slug}/article_1.md`,
-      pinned: slug === "n2c-article-1"
+      canonicalUrl: metadata.canonical_url,
+      pinned: metadata.featured_order === 1
     };
   }));
 

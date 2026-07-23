@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import DocsLayout from "../layouts/DocsLayout.astro";
 ---
-<BaseLayout title="Resources | NIS2COMPASS">
-  <section class="section">
+<DocsLayout title="Resources" currentSlug="resources:index" description="Public NIS2COMPASS reading pages, templates, schemas, and synthetic examples.">
+  <div class="rendered-doc resource-directory">
     <div class="section-header">
       <p class="eyebrow">Public knowledge base</p>
       <h1>Resources</h1>
@@ -11,8 +11,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="resource-list">
       <a class="resource-link" href="/docs/project-overview/"><strong>Project overview</strong><span>Rendered docs page.</span></a>
       <a class="resource-link" href="/blogs/"><strong>Blogs</strong><span>Pinned and future public blog articles.</span></a>
+      <a class="resource-link" href="/docs/progress/"><strong>Public progress</strong><span>Sanitized narrative updates without private funder or pilot records.</span></a>
       <a class="resource-link" href="/docs/nis2-in-plain-language/"><strong>NIS2 in plain language</strong><span>Rendered docs page.</span></a>
-      <a class="resource-link" href="/docs/cybersynchrony-alignment/"><strong>CYberSynchrony alignment</strong><span>Rendered docs page.</span></a>
+      <a class="resource-link" href="/docs/cybersynchrony-alignment/"><strong>Six CYberSynchrony modules</strong><span>Plain-language module centre.</span></a>
+      <a class="resource-link" href="/docs/cybersynchrony/"><strong>CYberSynchrony public results</strong><span>Official public pages and deliverables used as sources.</span></a>
+      <a class="resource-link" href="/tools/"><strong>Public tool references</strong><span>Source, documentation, licence, and relationship links.</span></a>
       <a class="resource-link" href="/docs/taxonomy/"><strong>Taxonomy</strong><span>Rendered documentation section.</span></a>
       <a class="resource-link" href="/docs/playbooks/"><strong>Playbooks</strong><span>Rendered documentation section.</span></a>
       <a class="resource-link" href="/docs/templates/"><strong>Templates overview</strong><span>Rendered documentation section.</span></a>
@@ -20,5 +23,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <a class="resource-link" href="/artifacts/docs/schemas/evidence-record.schema.json"><strong>Evidence record schema</strong><span>Direct JSON Schema download.</span></a>
       <a class="resource-link" href="/artifacts/docs/examples/synthetic-monitoring-events.jsonl"><strong>Synthetic monitoring events</strong><span>Direct JSONL example download.</span></a>
     </div>
-  </section>
-</BaseLayout>
+  </div>
+</DocsLayout>

@@ -2,11 +2,34 @@
 import BaseLayout from "./BaseLayout.astro";
 import { getArtifactLinks, getDocsNav } from "../lib/docs.mjs";
 
-const { title, description = "NIS2COMPASS public documentation.", currentSlug = "index" } = Astro.props;
+const { title, description = "NIS2COMPASS public documentation.", currentSlug = "index", canonical } = Astro.props;
 const navGroups = getDocsNav();
 const artifactLinks = getArtifactLinks();
+const publicPositionSlugs = new Set([
+  "cybersynchrony-alignment",
+  "taxonomy/cybersynchrony-module-map",
+  "cybersynchrony/modules/cross-core",
+  "cybersynchrony/modules/cyberwise",
+  "cybersynchrony/modules/cybergoplus"
+]);
 ---
-<BaseLayout title={`${title} | NIS2COMPASS Docs`} description={description}>
+<BaseLayout title={`${title} | NIS2COMPASS Docs`} description={description} canonical={canonical}>
+  <details class="docs-mobile-nav">
+    <summary>Browse documentation</summary>
+    <nav aria-label="Mobile documentation navigation">
+      <a class="sidebar-home" href="/docs/">Documentation home</a>
+      {navGroups.map((group) => (
+        <div class="sidebar-block">
+          <h2>{group.title}</h2>
+          <ul>
+            {group.items.map(([slug, label, href]) => (
+              <li><a class:list={{ active: slug === currentSlug }} aria-current={slug === currentSlug ? "page" : undefined} href={href || (slug === "index" ? "/docs/" : `/docs/${slug}/`)}>{label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  </details>
   <div class="docs-shell">
     <aside class="docs-sidebar" aria-label="Documentation navigation">
       <div class="sidebar-block">
@@ -18,7 +41,7 @@ const artifactLinks = getArtifactLinks();
           <ul>
             {group.items.map(([slug, label, href]) => (
               <li>
-                <a class:list={{ active: slug === currentSlug }} href={href || (slug === "index" ? "/docs/" : `/docs/${slug}/`)}>
+                <a class:list={{ active: slug === currentSlug }} aria-current={slug === currentSlug ? "page" : undefined} href={href || (slug === "index" ? "/docs/" : `/docs/${slug}/`)}>
                   {label}
                 </a>
               </li>
@@ -35,7 +58,7 @@ const artifactLinks = getArtifactLinks();
         </ul>
       </div>
     </aside>
-    <article class="docs-content">
+    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug) }]}>
       <slot />
     </article>
   </div>

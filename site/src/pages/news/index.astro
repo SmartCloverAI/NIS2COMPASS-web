@@ -1,0 +1,38 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { getNews } from "../../lib/docs.mjs";
+
+const news = await getNews();
+const isExternal = (href) => href.startsWith("https://");
+---
+<DocsLayout title="Project News" currentSlug="news:index" description="A sourced public register of NIS2COMPASS and relevant CYberSynchrony updates.">
+  <div class="rendered-doc news-register">
+    <p class="eyebrow">Sourced public register</p>
+    <h1>Project News</h1>
+    <p class="lead compact">This register records public project milestones, partner articles, and relevant CYberSynchrony releases. Each entry links to a public reading page or an authoritative source.</p>
+    <p class="directory-version">Register {news.content_version} | Sources last checked {news.last_verified}</p>
+
+    <ol class="news-timeline">
+      {news.items.map((item) => (
+        <li>
+          <article>
+            <div class="news-date">
+              <time datetime={item.date}>{item.date_label}</time>
+              <span>{item.category}</span>
+            </div>
+            <div>
+              <h2><a href={item.href} rel={isExternal(item.href) ? "external" : undefined}>{item.title}</a></h2>
+              <p>{item.summary}</p>
+              <p class="news-source"><a href={item.source_url} rel="external">{item.source_label}</a></p>
+            </div>
+          </article>
+        </li>
+      ))}
+    </ol>
+
+    <aside class="position-box" aria-label="News register scope">
+      <strong>Register scope</strong>
+      <p>An entry reports that a public source or project output exists. It does not by itself prove software deployment, technical integration, pilot completion, NIS2 compliance, or funder acceptance.</p>
+    </aside>
+  </div>
+</DocsLayout>

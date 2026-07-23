@@ -13,8 +13,5 @@ export async function getStaticPaths() {
 const { doc } = Astro.props;
 ---
 <DocsLayout title={doc.title} currentSlug={doc.slug}>
-  <div class="doc-meta">
-    <span>{doc.sourcePath}</span>
-  </div>
   <div class="rendered-doc" set:html={doc.html} />
 </DocsLayout>

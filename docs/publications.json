@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "2026-07-22-preview.2",
+  "last_verified": "2026-07-22",
+  "publications": [
+    {
+      "id": "smartclover-n2c-introduction",
+      "kind": "local-article",
+      "slug": "n2c-article-1",
+      "source_file": "blogs/n2c-article-1/article_1.md",
+      "title": "NIS2COMPASS: Turning Cybersecurity Work Into Verifiable Proof",
+      "date": "2026-06-15",
+      "publisher": "SmartClover SRL",
+      "partner": "AI STM Learning SRL",
+      "summary": "A practical introduction to the project, the evidence problem it addresses, and the partnership behind the work.",
+      "local_route": "/blogs/n2c-article-1/",
+      "canonical_url": "https://smartclover.ro/blog/nis2compass-verifiable-cybersecurity-proof",
+      "image": "/artifacts/blogs/n2c-article-1/images/nis2compass-blog-hero-auditor-evidence-variant-3.png",
+      "featured_order": 1
+    },
+    {
+      "id": "aistm-n2c-introduction",
+      "kind": "external-article",
+      "title": "NIS2COMPASS: Evidence-Linked AI for Verifiable Cybersecurity",
+      "date": "2026-06-16",
+      "publisher": "AI STM Learning SRL",
+      "partner": "SmartClover SRL",
+      "summary": "AI STM explains how evidence-linked AI and human review can organize NIS2 compliance evidence for smaller organizations.",
+      "canonical_url": "https://stm.ai/blog/nis2compass/",
+      "featured_order": 2
+    }
+  ]
+}

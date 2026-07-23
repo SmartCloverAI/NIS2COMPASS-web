@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "2026-07-23-preview.4",
+  "last_verified": "2026-07-22",
+  "release_state": "preview",
+  "scope": "Public-source tool references only. This file does not disclose NIS2COMPASS selection, deployment, access, integration, or pilot status.",
+  "modules": [
+    {
+      "id": "cyrescue",
+      "name": "CYRESCUE",
+      "plain_role": "Preparedness, incident response, resilience, and controlled security validation.",
+      "docs_slug": "cybersynchrony/modules/cyrescue",
+      "official_sources": [
+        "https://cybersynchrony.eu/concept-and-methodology/",
+        "https://cybersynchrony.eu/wp-content/uploads/2025/09/D2.2-Cybersecurity-landscape-and-threat-analysis-end-user-requirement-analysis-and-use-case-Definition-and-CYberSynchrony-Framework-%E2%80%931.0.pdf"
+      ],
+      "public_tool_ids": ["apache-caldera"]
+    },
+    {
+      "id": "cyberra",
+      "name": "CYBERRA",
+      "plain_role": "Threat intelligence and risk analysis that help teams understand and respond to changing threats.",
+      "docs_slug": "cybersynchrony/modules/cyberra",
+      "official_sources": [
+        "https://cybersynchrony.eu/concept-and-methodology/",
+        "https://cybersynchrony.eu/wp-content/uploads/2025/09/CYberSynchrony_D3.1_Enhanced-Threat-Intelligence-System_QA-reviewed.pdf"
+      ],
+      "public_tool_ids": ["misp"]
+    },
+    {
+      "id": "cybrite",
+      "name": "CYBRITE",
+      "plain_role": "Monitoring, anomaly detection, and incident-response support across hosts and networks.",
+      "docs_slug": "cybersynchrony/modules/cybrite",
+      "official_sources": [
+        "https://cybersynchrony.eu/concept-and-methodology/",
+        "https://cybersynchrony.eu/wp-content/uploads/2025/10/CYberSynchrony_D4.1_Integrated-Cybersecurity-Monitoring-Suite-v1_V1.0_for_Submission_Final.pdf"
+      ],
+      "public_tool_ids": ["wazuh", "suricata", "weka"]
+    },
+    {
+      "id": "cross-core",
+      "name": "CROSS-CORE",
+      "plain_role": "Secure cooperation, information exchange, and integrity checks for shared cyber information.",
+      "docs_slug": "cybersynchrony/modules/cross-core",
+      "official_sources": [
+        "https://cybersynchrony.eu/concept-and-methodology/",
+        "https://cybersynchrony.eu/wp-content/uploads/2025/10/CYberSynchrony_D5.1_Secure-Data-Exchange-Platform-v1_V1.0_30052025_BYTE.pdf",
+        "https://cybersynchrony.eu/wp-content/uploads/2025/09/CYberSynchrony_D5.2_Evidence-Integrity-System-v1_V1.0.pdf"
+      ],
+      "public_tool_ids": []
+    },
+    {
+      "id": "cyberwise",
+      "name": "CYBERWISE",
+      "plain_role": "Cybersecurity awareness, practical learning, and safer everyday behaviour.",
+      "docs_slug": "cybersynchrony/modules/cyberwise",
+      "official_sources": [
+        "https://cybersynchrony.eu/concept-and-methodology/",
+        "https://cybersynchrony.eu/objectives/",
+        "https://cybersynchrony.eu/public-deliverables/"
+      ],
+      "public_tool_ids": []
+    },
+    {
+      "id": "cybergoplus",
+      "name": "CYBERGOPLUS",
+      "plain_role": "Governance, policy, compliance, and automation that connect security work to reviewable controls.",
+      "docs_slug": "cybersynchrony/modules/cybergoplus",
+      "official_sources": [
+        "https://cybersynchrony.eu/concept-and-methodology/",
+        "https://cybersynchrony.eu/wp-content/uploads/2025/09/D2.2-Cybersecurity-landscape-and-threat-analysis-end-user-requirement-analysis-and-use-case-Definition-and-CYberSynchrony-Framework-%E2%80%931.0.pdf",
+        "https://cybersynchrony.eu/public-deliverables/"
+      ],
+      "public_tool_ids": []
+    }
+  ],
+  "tools": [
+    {
+      "id": "misp",
+      "name": "MISP",
+      "category": "open-source-upstream",
+      "module_ids": ["cyberra"],
+      "purpose": "Create, enrich, correlate, and share structured cyber-threat intelligence.",
+      "relationship": "Named in the public CYberSynchrony threat-intelligence deliverable. No NIS2COMPASS deployment or federation status is claimed.",
+      "homepage": "https://www.misp-project.org/",
+      "source_repository": "https://github.com/MISP/MISP",
+      "documentation": "https://www.circl.lu/doc/misp/",
+      "license_id": "AGPL-3.0-only",
+      "license_source": "https://github.com/MISP/MISP/blob/2.5/LICENSE",
+      "cybersynchrony_public_source": "https://cybersynchrony.eu/wp-content/uploads/2025/09/CYberSynchrony_D3.1_Enhanced-Threat-Intelligence-System_QA-reviewed.pdf",
+      "last_verified": "2026-07-22"
+    },
+    {
+      "id": "wazuh",
+      "name": "Wazuh",
+      "category": "open-source-upstream",
+      "module_ids": ["cybrite"],
+      "purpose": "Collect and correlate endpoint and system security events for monitoring and investigation.",
+      "relationship": "Named in the public CYberSynchrony integrated monitoring deliverable. No NIS2COMPASS deployment or integration status is claimed.",
+      "homepage": "https://wazuh.com/",
+      "source_repository": "https://github.com/wazuh/wazuh",
+      "documentation": "https://documentation.wazuh.com/current/quickstart.html",
+      "license_id": "GPL-2.0-only for the server; companion components have their own licences",
+      "license_source": "https://github.com/wazuh/wazuh/blob/master/LICENSE",
+      "cybersynchrony_public_source": "https://cybersynchrony.eu/wp-content/uploads/2025/10/CYberSynchrony_D4.1_Integrated-Cybersecurity-Monitoring-Suite-v1_V1.0_for_Submission_Final.pdf",
+      "last_verified": "2026-07-22"
+    },
+    {
+      "id": "suricata",
+      "name": "Suricata",
+      "category": "open-source-upstream",
+      "module_ids": ["cybrite"],
+      "purpose": "Inspect network traffic and produce security alerts using an open-source detection engine.",
+      "relationship": "Named in the public CYberSynchrony integrated monitoring deliverable. No NIS2COMPASS sensor placement or pilot use is claimed.",
+      "homepage": "https://suricata.io/",
+      "source_repository": "https://github.com/OISF/suricata",
+      "documentation": "https://docs.suricata.io/en/latest/",
+      "license_id": "GPL-2.0-only",
+      "license_source": "https://github.com/OISF/suricata/blob/master/LICENSE",
+      "cybersynchrony_public_source": "https://cybersynchrony.eu/wp-content/uploads/2025/10/CYberSynchrony_D4.1_Integrated-Cybersecurity-Monitoring-Suite-v1_V1.0_for_Submission_Final.pdf",
+      "last_verified": "2026-07-22"
+    },
+    {
+      "id": "weka",
+      "name": "WEKA",
+      "category": "open-source-upstream",
+      "module_ids": ["cybrite"],
+      "purpose": "Explore machine-learning methods for classification, clustering, and anomaly analysis with reviewable datasets.",
+      "relationship": "Named in public CYberSynchrony framework and monitoring deliverables. No NIS2COMPASS model performance or production use is claimed.",
+      "homepage": "https://ml.cms.waikato.ac.nz/weka/",
+      "source_repository": "https://sourceforge.net/projects/weka/",
+      "documentation": "https://waikato.github.io/weka-wiki/downloading_weka/",
+      "license_id": "GPL-3.0-only for current 3.8 and 3.9 release lines",
+      "license_source": "https://waikato.github.io/weka-wiki/faqs/commercial_applications/",
+      "cybersynchrony_public_source": "https://cybersynchrony.eu/wp-content/uploads/2025/10/CYberSynchrony_D4.1_Integrated-Cybersecurity-Monitoring-Suite-v1_V1.0_for_Submission_Final.pdf",
+      "last_verified": "2026-07-22"
+    },
+    {
+      "id": "apache-caldera",
+      "name": "Apache Caldera",
+      "category": "open-source-upstream",
+      "module_ids": ["cyrescue"],
+      "purpose": "Support controlled adversary-emulation research and defensive validation in isolated, authorized environments.",
+      "relationship": "Independent upstream research reference relevant to CYRESCUE's public validation role. It is not presented as a CYberSynchrony-supplied component or confirmed NIS2COMPASS integration.",
+      "homepage": "https://caldera.apache.org/",
+      "source_repository": "https://github.com/apache/caldera",
+      "documentation": "https://caldera.readthedocs.io/en/latest/",
+      "license_id": "Apache-2.0",
+      "license_source": "https://github.com/apache/caldera/blob/master/LICENSE",
+      "last_verified": "2026-07-22"
+    },
+    {
+      "id": "snyk-cli",
+      "name": "Snyk CLI and service",
+      "category": "commercial-account-backed",
+      "module_ids": [],
+      "purpose": "Analyze software dependencies and source projects through an authenticated vendor service and public CLI.",
+      "relationship": "Snyk is named in a public CYberSynchrony integration deliverable. NIS2COMPASS does not publish a module assignment, selection status, entitlement, or integration claim.",
+      "homepage": "https://snyk.io/",
+      "source_repository": "https://github.com/snyk/cli",
+      "documentation": "https://docs.snyk.io/developer-tools/snyk-cli",
+      "license_id": "Apache-2.0 for the public CLI source; vendor service terms also apply",
+      "license_source": "https://github.com/snyk/cli/blob/main/LICENSE",
+      "cybersynchrony_public_source": "https://cybersynchrony.eu/wp-content/uploads/2025/09/CYberSynchrony_D8.1_CYberSynchrony-Integration-Blueprint-Use-Case-Portfolio-V1_V1.0_eBOS-2.pdf",
+      "last_verified": "2026-07-22"
+    }
+  ]
+}

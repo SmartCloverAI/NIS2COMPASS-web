@@ -1,6 +1,10 @@
 ---
 import "../styles/global.css";
-const { title = "NIS2COMPASS", description = "Public dissemination hub for NIS2 readiness, evidence, and CYberSynchrony alignment." } = Astro.props;
+import publicationConfig from "../config/publication.json";
+
+const { title = "NIS2COMPASS", description = "Public dissemination hub for NIS2 readiness, evidence, and CYberSynchrony alignment.", canonical, mainClass = "" } = Astro.props;
+const canonicalHref = canonical || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
+const isPreview = publicationConfig.release_state !== "published";
 ---
 <!doctype html>
 <html lang="en">
@@ -9,30 +13,76 @@ const { title = "NIS2COMPASS", description = "Public dissemination hub for NIS2 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#1F7A5A" />
+    {publicationConfig.noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalHref} />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <title>{title}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {isPreview && (
+      <div class="preview-banner" role="status">
+        <strong>{publicationConfig.release_label}</strong>
+        <span>Funding visibility wording and assets await written CYberSynchrony Coordinator direction. This build is not approved for publication.</span>
+      </div>
+    )}
     <header class="site-header">
       <a class="brand" href="/" aria-label="NIS2COMPASS home">
         <img class="brand-mark" src="/logo.svg" alt="" aria-hidden="true" width="36" height="36" />
         <span>NIS2COMPASS</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="/docs/">Docs</a>
+        <a href="/docs/cybersynchrony-alignment/">Modules</a>
+        <a href="/news/">News</a>
+        <a href="/tools/">Tools</a>
+        <a href="/docs/progress/">Progress</a>
         <a href="/blogs/">Blogs</a>
         <a href="/resources/">Resources</a>
-        <a href="/docs/glossary/">Glossary</a>
       </nav>
     </header>
-    <main>
+    <main id="main-content" class={mainClass} tabindex="-1">
       <slot />
     </main>
     <footer class="site-footer">
-      <p>NIS2COMPASS public dissemination repository. Public-safe material only.</p>
-      <p>Content development: SmartClover SRL.</p>
-      <p>Copyright AI STM Learning SRL and SmartClover SRL, NIS2COMPASS consortium partners.</p>
-      <p><a href="https://cybersynchrony.eu/">CYberSynchrony</a> aligned public outputs for NIS2 readiness learning.</p>
+      <div class="footer-grid">
+        <section>
+          <strong>NIS2COMPASS</strong>
+          <p>Public dissemination repository | Public-safe material only.</p>
+          <p>Content development: SmartClover SRL | Copyright AI STM Learning SRL and SmartClover SRL.</p>
+          <div class="footer-runtime">
+            <span>Version <strong>{publicationConfig.site_version}</strong> | Updated <time datetime={publicationConfig.last_updated}>{publicationConfig.last_updated}</time></span>
+            <span>Served by edge node <strong data-edge-node-name>local</strong></span>
+          </div>
+        </section>
+        <section class="funding-notice" aria-label="Funding visibility notice">
+          {publicationConfig.funding_status === "approved" ? (
+            <>
+              <div class="funding-marks">
+                {publicationConfig.eu_emblem && <img src={publicationConfig.eu_emblem} alt="European Union emblem" />}
+                {publicationConfig.cybersynchrony_logo && <img src={publicationConfig.cybersynchrony_logo} alt="CYberSynchrony" />}
+              </div>
+              <p>{publicationConfig.funding_sentence}</p>
+              <p>{publicationConfig.disclaimer}</p>
+            </>
+          ) : (
+            <>
+              <strong>Funding acknowledgement pending approval</strong>
+              <p>This review candidate intentionally omits an unverified programme sentence and funding marks. They must be added only after written CYberSynchrony Coordinator direction confirms the required visibility wording and assets.</p>
+            </>
+          )}
+          <p><a href="https://cybersynchrony.eu/">Visit the CYberSynchrony project website</a></p>
+        </section>
+      </div>
     </footer>
+    <script is:inline src="/runtime-config.js"></script>
+    <script is:inline>
+      (() => {
+        const runtimeName = globalThis.__N2C_RUNTIME__?.edgeNodeName;
+        const edgeNodeName = typeof runtimeName === "string" && runtimeName.trim() ? runtimeName.trim() : "local";
+        document.querySelectorAll("[data-edge-node-name]").forEach((element) => {
+          element.textContent = edgeNodeName;
+        });
+      })();
+    </script>
   </body>
 </html>

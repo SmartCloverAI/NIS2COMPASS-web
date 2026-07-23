@@ -1,122 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getBlogs } from "../lib/docs.mjs";
+import { getNews } from "../lib/docs.mjs";
 
-const blogs = await getBlogs();
-const pinnedBlog = blogs.find((blog) => blog.pinned);
+const news = await getNews();
+const isExternal = (href) => href.startsWith("https://");
 ---
-<BaseLayout title="NIS2COMPASS | Public NIS2 Readiness Knowledge Hub">
-  <section class="hero">
-    <div>
-      <p class="eyebrow">Public dissemination hub</p>
-      <h1>NIS2COMPASS</h1>
-      <p class="lead">A public-safe knowledge base for NIS2 readiness, evidence organization, CYberSynchrony alignment, and reusable cybersecurity improvement templates.</p>
-      <div class="actions">
-        <a class="button" href="/docs/">Open documentation</a>
-        <a class="button secondary" href="/resources/">Browse artifacts</a>
-      </div>
-    </div>
-    <div class="evidence-map" aria-label="Evidence flow overview">
-      <div class="map-row">
-        <div class="map-label">NIS2</div>
-        <div class="map-content">
-          <strong>Controls and obligations</strong>
-          <span>Plain-language readiness areas and public evidence templates.</span>
-        </div>
-      </div>
-      <div class="map-row">
-        <div class="map-label">Evidence</div>
-        <div class="map-content">
-          <strong>Records that prove work</strong>
-          <span>CSV registers, JSON schemas, synthetic examples, and hash manifests.</span>
-        </div>
-      </div>
-      <div class="map-row">
-        <div class="map-label">Modules</div>
-        <div class="map-content">
-          <strong>CYberSynchrony alignment</strong>
-          <span>CYBERGOPLUS, CYBRITE, CYBERRA, CYRESCUE, CYBERWISE, and CROSS-CORE.</span>
-        </div>
-      </div>
-      <div class="map-row">
-        <div class="map-label">Public</div>
-        <div class="map-content">
-          <strong>Reusable dissemination</strong>
-          <span>Playbooks and templates without pilot-sensitive data.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <h2>What this project publishes</h2>
-      <p>NIS2COMPASS publishes public-safe material that helps teams learn, prepare, and structure evidence without exposing pilot organizations or sensitive cybersecurity data.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <h3>Plain-language NIS2 guidance</h3>
-        <p>Rendered documentation pages with a navigation tree, not raw Markdown files.</p>
-      </article>
-      <article class="card">
-        <h3>Reusable templates</h3>
-        <p>CSV and Markdown templates for control registers, evidence records, risk registers, release checks, and Rules of Engagement.</p>
-      </article>
-      <article class="card">
-        <h3>Synthetic examples</h3>
-        <p>Fake monitoring, threat-intelligence, vulnerability, and awareness examples for demos and schema testing.</p>
-      </article>
-    </div>
-  </section>
-
-  {pinnedBlog && (
-    <section class="section blogs-home" id="blogs">
-      <div class="section-header">
-        <p class="eyebrow">Blogs</p>
-        <h2>Latest Public Article</h2>
-        <p>Public-safe narrative articles explain what NIS2COMPASS is learning and building without exposing pilot-sensitive material.</p>
-      </div>
-      <article class="blog-card blog-card-featured">
-        {pinnedBlog.heroImage && <img src={pinnedBlog.heroImage} alt="" loading="lazy" />}
+<BaseLayout title="NIS2COMPASS | Public NIS2 Readiness Knowledge Hub" mainClass="home-main">
+  <div class="home-dashboard">
+    <section class="home-intro" aria-labelledby="home-title">
+      <div class="home-title-row">
+        <img src="/logo.svg" alt="" aria-hidden="true" width="76" height="76" />
         <div>
-          <span class="pin-label">Pinned</span>
-          <h3><a href={pinnedBlog.route}>{pinnedBlog.title}</a></h3>
-          <p>{pinnedBlog.subtitle}</p>
-          <p class="canonical-note">Canonical source: {pinnedBlog.canonicalSource}</p>
-          <a class="button secondary" href={pinnedBlog.route}>Read article</a>
+          <p class="eyebrow">Public dissemination hub</p>
+          <h1 id="home-title">NIS2COMPASS</h1>
         </div>
-      </article>
+      </div>
+      <p class="home-lead">Learn how to organize NIS2 readiness work, connect cybersecurity activity to reviewable evidence, and understand the six CYberSynchrony modules without exposing private pilot information.</p>
+      <div class="actions home-actions">
+        <a class="button" href="/docs/">Open the knowledge base</a>
+        <a class="button secondary" href="/docs/project-overview/">Project overview</a>
+      </div>
     </section>
-  )}
 
-  <section class="section band">
-    <div class="section-header">
-      <h2>CYberSynchrony alignment</h2>
-      <p>NIS2COMPASS is aligned with CYberSynchrony module families for compliance evidence, monitoring, threat intelligence, resilience validation, awareness, and secure exchange.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <h3>CYBERGOPLUS</h3>
-        <p>Governance, policy, compliance, and audit evidence.</p>
-      </article>
-      <article class="card">
-        <h3>CYBRITE and CYBERRA</h3>
-        <p>Monitoring, early detection, threat intelligence, and response playbook support.</p>
-      </article>
-      <article class="card">
-        <h3>CYRESCUE and CYBERWISE</h3>
-        <p>Validation, resilience, awareness, training, and human-risk metrics.</p>
-      </article>
-    </div>
-  </section>
+    <section class="home-news" aria-labelledby="latest-news-heading">
+      <div class="home-section-heading">
+        <div>
+          <p class="eyebrow">Public register</p>
+          <h2 id="latest-news-heading">Latest News</h2>
+        </div>
+        <a href="/news/">View all</a>
+      </div>
+      <ol>
+        {news.items.slice(0, 4).map((item) => (
+          <li>
+            <time datetime={item.date}>{item.date_label}</time>
+            <a href={item.href} rel={isExternal(item.href) ? "external" : undefined}>{item.title}</a>
+          </li>
+        ))}
+      </ol>
+    </section>
 
-  <section class="section">
-    <div class="section-header">
-      <h2>Public boundary</h2>
-      <p>This website contains public-safe material only. Real pilot data, raw logs, credentials, exploit details, private architecture, and internal funder records are not published here.</p>
-    </div>
-    <div class="callout">
-      <strong>Default rule:</strong> if a file could help identify, attack, embarrass, or expose a pilot organization or person, it does not belong in the public repository.
-    </div>
-  </section>
+    <nav class="home-shortcuts" aria-label="Explore NIS2COMPASS">
+      <a href="/docs/cybersynchrony-alignment/"><strong>6 CYberSynchrony modules</strong><span>Roles, public results, and relationships</span></a>
+      <a href="/tools/"><strong>Public tools</strong><span>Sourced upstream software references</span></a>
+      <a href="/docs/progress/"><strong>Project progress</strong><span>Sanitized monthly updates</span></a>
+      <a href="/blogs/"><strong>Partner articles</strong><span>SmartClover and AI STM perspectives</span></a>
+    </nav>
+
+    <aside class="position-box home-position" aria-label="Public software and disclosure position">
+      <strong>Public software and disclosure position</strong>
+      <p>CYberSynchrony results and software links are public research references. A listing does not claim NIS2COMPASS selection, deployment, integration, pilot completion, or authorization to test a live system. Private pilot data, vulnerabilities, credentials, and funder records are not published here.</p>
+    </aside>
+  </div>
 </BaseLayout>

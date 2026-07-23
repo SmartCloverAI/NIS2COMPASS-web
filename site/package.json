@@ -1,21 +1,31 @@
 {
   "name": "nis2compass-site",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "scripts": {
-    "predev": "node scripts/sync-public-docs.mjs",
+    "sync": "node scripts/sync-public-docs.mjs",
+    "check:content": "node scripts/validate-public-content.mjs",
+    "predev": "npm run check:content && npm run sync",
     "dev": "astro dev --host 0.0.0.0 --port 4321",
-    "prebuild": "node scripts/sync-public-docs.mjs",
+    "prebuild": "npm run check:content && npm run sync",
     "build": "astro build",
+    "postbuild": "npm run runtime:config && npm run check:built",
+    "runtime:config": "node scripts/write-runtime-config.mjs",
+    "check:built": "node scripts/validate-built-site.mjs",
+    "check:links": "node scripts/check-external-links.mjs",
+    "check:release": "node scripts/validate-release.mjs",
+    "check": "npm run build",
+    "prepreview": "npm run runtime:config && npm run check:built",
     "preview": "sirv dist --host 0.0.0.0 --port ${PORT:-8080}",
+    "prestart": "npm run runtime:config && npm run check:built",
     "start": "sirv dist --host 0.0.0.0 --port ${PORT:-8080}"
   },
   "dependencies": {
-    "marked": "^17.0.1",
+    "marked": "^18.0.7",
     "sirv-cli": "^3.0.1"
   },
   "devDependencies": {
-    "astro": "^6.2.2"
+    "astro": "^7.1.3"
   }
 }

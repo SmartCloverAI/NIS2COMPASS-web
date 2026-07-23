@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "2026-07-23-preview.2",
+  "last_verified": "2026-07-23",
+  "items": [
+    {
+      "id": "aistm-article-1",
+      "date": "2026-06-16",
+      "date_label": "16 June 2026",
+      "category": "Partner article",
+      "title": "AI STM publishes its NIS2COMPASS introduction",
+      "summary": "AI STM Learning explains the evidence-linked AI approach, the need for human review, and how smaller organizations can organize NIS2 compliance evidence.",
+      "href": "https://stm.ai/blog/nis2compass/",
+      "source_label": "Read on the AI STM website",
+      "source_url": "https://stm.ai/blog/nis2compass/",
+      "publication_id": "aistm-n2c-introduction"
+    },
+    {
+      "id": "smartclover-article-1",
+      "date": "2026-06-15",
+      "date_label": "15 June 2026",
+      "category": "Partner article",
+      "title": "SmartClover publishes the first NIS2COMPASS article",
+      "summary": "SmartClover introduces the project through the practical problem of turning cybersecurity work into evidence that another person can inspect and verify.",
+      "href": "/blogs/n2c-article-1/",
+      "source_label": "Read the public article",
+      "source_url": "https://smartclover.ro/blog/nis2compass-verifiable-cybersecurity-proof",
+      "publication_id": "smartclover-n2c-introduction"
+    },
+    {
+      "id": "n2c-project-launch",
+      "date": "2026-06-01",
+      "date_label": "1 June 2026",
+      "category": "Project",
+      "title": "NIS2COMPASS implementation period begins",
+      "summary": "The eight-month NIS2COMPASS project starts with project controls, evidence practices, CYberSynchrony alignment work, and a public dissemination baseline.",
+      "href": "/docs/progress/2026-06-month-1/",
+      "source_label": "See the CYberSynchrony open calls page",
+      "source_url": "https://cybersynchrony.eu/open-calls/"
+    },
+    {
+      "id": "cybersynchrony-module-results-published",
+      "date": "2025-10",
+      "date_label": "September-October 2025",
+      "category": "CYberSynchrony public results",
+      "title": "CYberSynchrony publishes framework and module results",
+      "summary": "CYberSynchrony made public deliverables available for its six-module framework and initial technical results. These publications describe project capabilities; they do not mean that every module is a downloadable open-source software package.",
+      "href": "/docs/cybersynchrony/",
+      "source_label": "Explore the sourced CYberSynchrony results",
+      "source_url": "https://cybersynchrony.eu/public-deliverables/"
+    }
+  ]
+}

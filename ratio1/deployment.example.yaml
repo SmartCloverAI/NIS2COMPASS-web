@@ -2,7 +2,7 @@
 name: nis2compass-site
 source:
   type: git
-  repository: git@github.com-andreea:SmartCloverAI/NIS2COMPASS.git
+  repository: https://github.com/SmartCloverAI/NIS2COMPASS.git
   branch: main
   clone: full-repository
 runtime:
@@ -18,3 +18,4 @@ resources:
   disk: 2Gi
 env:
   NODE_ENV: production
+  # WAR/CAR should inject EE_HOST_ID dynamically; do not hard-code an edge-node identity here.

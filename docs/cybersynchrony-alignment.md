@@ -1,25 +1,55 @@
-# CYberSynchrony Alignment
+# The Six CYberSynchrony Modules
 
-CYberSynchrony is the larger EU-funded cybersecurity project that funds and frames NIS2COMPASS through a Financial Support to Third Parties open-call mechanism.
+CYberSynchrony is a European modular cybersecurity project built around people, processes, technology, and security culture. NIS2COMPASS was selected through its open-call mechanism and uses the public CYberSynchrony framework as an alignment point for practical NIS2 readiness and evidence work.
 
-NIS2COMPASS aligns public work with CYberSynchrony module families:
+> **Public framework and software position**
+>
+> This page describes the public CYberSynchrony framework and independently available tool references. It does not claim that a tool has been deployed by NIS2COMPASS, that a private CYberSynchrony interface is available, or that an integration has been completed.
 
-| Module | Plain meaning | NIS2COMPASS public alignment |
+## Module Overview
+
+| Module | Plain-language role | Explore |
 | --- | --- | --- |
-| CYBERGOPLUS | Governance, policy, compliance, and audit evidence. | Public evidence taxonomy, control mapping templates, audit-pack method notes. |
-| CYBRITE | Monitoring and early detection. | Public monitoring evidence playbook and sanitized event examples. |
-| CYBERRA | Threat intelligence and response playbook support. | Public threat-intelligence playbook and synthetic STIX example. |
-| CYRESCUE | Resilience validation and posture assessment. | Public validation safety guide and reusable Rules of Engagement template. |
-| CYBERWISE | Awareness, training, and human-risk metrics. | Public awareness and phishing metrics guide. |
-| CROSS-CORE | Secure exchange and evidence integrity. | Public hash-manifest method and sanitized exchange guidance. |
+| CYRESCUE | Prepare for incidents, test resilience, and improve response in controlled conditions. | [CYRESCUE](cybersynchrony/modules/cyrescue.md) |
+| CYBERRA | Gather threat intelligence and analyze risk so teams can make better response decisions. | [CYBERRA](cybersynchrony/modules/cyberra.md) |
+| CYBRITE | Monitor systems and networks, identify unusual behaviour, and support incident handling. | [CYBRITE](cybersynchrony/modules/cybrite.md) |
+| CROSS-CORE | Exchange cyber information securely and check whether shared records have been altered. | [CROSS-CORE](cybersynchrony/modules/cross-core.md) |
+| CYBERWISE | Improve cybersecurity awareness, learning, and safer everyday behaviour. | [CYBERWISE](cybersynchrony/modules/cyberwise.md) |
+| CYBERGOPLUS | Connect governance, policies, compliance checks, and evidence to reviewable controls. | [CYBERGOPLUS](cybersynchrony/modules/cybergoplus.md) |
 
-## Integration Levels
+## How The Modules Fit Together
 
-| Level | Meaning |
+A simplified flow starts with governance and learning, continues through monitoring and threat understanding, then supports controlled response and secure exchange:
+
+1. **CYBERGOPLUS** helps define policies, controls, and compliance expectations.
+2. **CYBERWISE** helps people understand and apply safer behaviour.
+3. **CYBRITE** observes systems and networks for events that need attention.
+4. **CYBERRA** adds threat context and risk analysis.
+5. **CYRESCUE** supports preparedness, controlled validation, response, and resilience.
+6. **CROSS-CORE** supports secure cooperation and integrity checks when information is exchanged.
+
+The real CYberSynchrony architecture is more interconnected than this learning sequence. The sequence is provided only to help first-time readers understand why all six modules matter.
+
+## Public Tool References
+
+Public CYberSynchrony deliverables name MISP, Wazuh, Suricata, and WEKA. NIS2COMPASS presents those projects as learning and research references; the table also includes Apache Caldera as a separate independent reference relevant to controlled validation. None of these listings is proof of NIS2COMPASS selection, deployment, or integration.
+
+| Module context | Public upstream references |
 | --- | --- |
-| Reuse | Use CYberSynchrony public results and module concepts. |
-| Alignment | Structure NIS2COMPASS outputs so they map to CYberSynchrony modules. |
-| Contribution | Publish public-safe templates, playbooks, schemas, and synthetic examples. |
-| Technical integration | Exchange data with a confirmed CYberSynchrony interface only after approval. |
+| CYRESCUE | [Apache Caldera](https://caldera.apache.org/) as an independent controlled adversary-emulation research reference; it is not presented as a CYberSynchrony-supplied component. |
+| CYBERRA | [MISP](https://www.misp-project.org/) for structured cyber-threat intelligence. |
+| CYBRITE | [Wazuh](https://wazuh.com/), [Suricata](https://suricata.io/), and [WEKA](https://ml.cms.waikato.ac.nz/weka/) as publicly documented monitoring and analytics foundations. |
+| CROSS-CORE | No independently downloadable open-source implementation is claimed by NIS2COMPASS on this page. |
+| CYBERWISE | No product or individual-scoring tool is named by NIS2COMPASS on this page. |
+| CYBERGOPLUS | No open-source module implementation is claimed by NIS2COMPASS on this page. |
 
-Public material in this repository supports reuse, alignment, and contribution. It does not imply that live CYberSynchrony sandboxes or APIs are publicly available.
+See the [public tool reference directory](/tools/) for source repositories, documentation, licence references, relationship labels, and verification dates.
+
+## Authoritative Public Sources
+
+- [CYberSynchrony concept and methodology](https://cybersynchrony.eu/concept-and-methodology/)
+- [CYberSynchrony objectives](https://cybersynchrony.eu/objectives/)
+- [CYberSynchrony public deliverables](https://cybersynchrony.eu/public-deliverables/)
+- [CYberSynchrony NIS2COMPASS winner page](https://cybersynchrony.eu/open-calls-winners/nis2compass-nis2-compliance-monitoring-and-posture-assessment-for-sectoral-security/)
+
+Source and link status last reviewed: 22 July 2026.

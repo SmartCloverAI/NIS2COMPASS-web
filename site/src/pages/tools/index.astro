@@ -1,0 +1,69 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { getToolRegister } from "../../lib/docs.mjs";
+
+const register = await getToolRegister();
+const modulesById = new Map(register.modules.map((module) => [module.id, module]));
+const openSourceTools = register.tools.filter((tool) => tool.category === "open-source-upstream");
+const accountBackedTools = register.tools.filter((tool) => tool.category !== "open-source-upstream");
+---
+<DocsLayout title="Public Tool References" currentSlug="tools:index" description="Sourced upstream tools relevant to public CYberSynchrony module research.">
+  <div class="rendered-doc tool-directory">
+    <p class="eyebrow">Sourced directory</p>
+    <h1>Public Tool References</h1>
+    <aside class="position-box" aria-label="Public software position">
+      <strong>Public software position</strong>
+      <p>This directory separates independently available open-source projects from account-backed services. A listing is a public research reference, not a claim that NIS2COMPASS has selected, deployed, accessed, or integrated the tool.</p>
+    </aside>
+    <p class="directory-version">Register {register.content_version} · Sources last checked {register.last_verified}</p>
+
+    <section aria-labelledby="open-source-heading">
+      <h2 id="open-source-heading">Open-Source Upstream Projects</h2>
+      <div class="tool-directory-grid">
+        {openSourceTools.map((tool) => (
+          <article class="tool-card" id={tool.id}>
+            <div class="tool-card-heading">
+              <h3>{tool.name}</h3>
+              <span>Open source</span>
+            </div>
+            <p>{tool.purpose}</p>
+            <p class="relationship-note">{tool.relationship}</p>
+            <dl>
+              <div><dt>Module context</dt><dd>{tool.module_ids.map((id) => modulesById.get(id)?.name).join(", ")}</dd></div>
+              <div><dt>Licence reference</dt><dd>{tool.license_id}</dd></div>
+            </dl>
+            <nav class="tool-links" aria-label={`${tool.name} links`}>
+              <a href={tool.homepage} rel="external">Project home</a>
+              <a href={tool.source_repository} rel="external">Source</a>
+              <a href={tool.documentation} rel="external">Documentation</a>
+              <a href={tool.license_source} rel="external">Licence source</a>
+              {tool.cybersynchrony_public_source && <a href={tool.cybersynchrony_public_source} rel="external">Public CYberSynchrony source</a>}
+            </nav>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section aria-labelledby="account-backed-heading">
+      <h2 id="account-backed-heading">Account-Backed Reference</h2>
+      {accountBackedTools.map((tool) => (
+        <article class="tool-card account-backed" id={tool.id}>
+          <div class="tool-card-heading">
+            <h3>{tool.name}</h3>
+            <span>Service terms apply</span>
+          </div>
+          <p>{tool.purpose}</p>
+          <p class="relationship-note">{tool.relationship}</p>
+          <nav class="tool-links" aria-label={`${tool.name} links`}>
+            <a href={tool.homepage} rel="external">Service home</a>
+            <a href={tool.source_repository} rel="external">Public CLI source</a>
+            <a href={tool.documentation} rel="external">Documentation</a>
+            {tool.cybersynchrony_public_source && <a href={tool.cybersynchrony_public_source} rel="external">Public CYberSynchrony source</a>}
+          </nav>
+        </article>
+      ))}
+    </section>
+
+    <aside class="callout"><strong>Safety boundary:</strong> controlled security-validation tools must be used only with written authorization, agreed scope, safe test windows, and appropriate isolation. This directory is not an instruction to test a live organization.</aside>
+  </div>
+</DocsLayout>

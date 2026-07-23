@@ -1,10 +1,9 @@
 # CYberSynchrony Module Map
 
-| CYberSynchrony module | Public NIS2COMPASS mapping | Public artifacts |
-| --- | --- | --- |
-| CYBERGOPLUS | Compliance, governance, controls, evidence, audit logic. | Control taxonomy, evidence schema, audit-pack method. |
-| CYBRITE | Monitoring and early detection. | Monitoring evidence playbook, sanitized event schema. |
-| CYBERRA | Threat intelligence and response playbooks. | Threat-intelligence playbook, synthetic STIX example. |
-| CYRESCUE | Validation and resilience testing. | Validation safety guide, public Rules of Engagement template. |
-| CYBERWISE | Awareness and human-risk metrics. | Awareness guide, phishing metrics template. |
-| CROSS-CORE | Secure exchange and evidence integrity. | Hash-manifest guidance, sanitized exchange examples. |
+The maintained module map now lives in the [six-module CYberSynchrony centre](/docs/cybersynchrony-alignment/).
+
+That page is the single public source for module descriptions, public CYberSynchrony results, upstream tool references, relationship caveats, and verification dates. This taxonomy page intentionally does not maintain a second status table.
+
+> **Public status boundary**
+>
+> For machine-readable public-source metadata, use the [public tool reference register](/artifacts/docs/cybersynchrony/tool-register.json). The register does not disclose NIS2COMPASS selection, deployment, integration, access, or pilot status.

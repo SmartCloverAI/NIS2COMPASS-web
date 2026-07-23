@@ -1,44 +1,44 @@
 ---
 import DocsLayout from "../../layouts/DocsLayout.astro";
-import { getBlogs } from "../../lib/docs.mjs";
+import { getPublications } from "../../lib/docs.mjs";
 
-const blogs = await getBlogs();
-const pinnedBlogs = blogs.filter((blog) => blog.pinned);
-const laterBlogs = blogs.filter((blog) => !blog.pinned);
+const publications = await getPublications();
+const pinnedPublications = publications.filter((publication) => publication.featured_order === 1);
+const laterPublications = publications.filter((publication) => publication.featured_order !== 1);
+const publicationHref = (publication) => publication.kind === "local-article" ? publication.local_route : publication.canonical_url;
 ---
 <DocsLayout title="Blogs" currentSlug="blog:index" description="NIS2COMPASS public blog articles and dissemination notes.">
-  <div class="doc-meta">
-    <span>blogs/</span>
-  </div>
   <div class="rendered-doc blog-index">
     <p class="eyebrow">Public dissemination</p>
     <h1>Blogs</h1>
-    <p class="lead compact">Narrative articles, project notes, and public-safe explanations from the NIS2COMPASS dissemination work. The report repository remains the canonical source for each approved article.</p>
+    <p class="lead compact">Narrative articles and public-safe explanations from both NIS2COMPASS partners. Local reading copies preserve the publisher's canonical link.</p>
 
     <section class="blog-list" aria-label="Pinned blog articles">
       <h2>Pinned</h2>
-      {pinnedBlogs.map((blog) => (
-        <article class="blog-card">
-          {blog.heroImage && <img src={blog.heroImage} alt="" loading="lazy" />}
+      {pinnedPublications.map((publication) => (
+        <article class:list={["blog-card", { "blog-card-with-image": publication.image }]}>
+          {publication.image && <img src={publication.image} alt="" loading="lazy" />}
           <div>
-            <p class="blog-meta">{blog.date} · {blog.author}</p>
-            <h3><a href={blog.route}>{blog.title}</a></h3>
-            {blog.subtitle && <p>{blog.subtitle}</p>}
-            <p class="canonical-note">Canonical source: {blog.canonicalSource}</p>
+            <span class="pin-label">Pinned</span>
+            <p class="blog-meta"><time datetime={publication.date}>{publication.date}</time> · {publication.publisher}</p>
+            <h3><a href={publicationHref(publication)} rel={publication.kind === "external-article" ? "external" : undefined}>{publication.title}</a></h3>
+            <p>{publication.summary}</p>
+            <p class="publication-origin">With {publication.partner} · {publication.kind === "external-article" ? "Publisher website" : "Reading copy"}</p>
           </div>
         </article>
       ))}
     </section>
 
-    {laterBlogs.length > 0 && (
+    {laterPublications.length > 0 && (
       <section class="blog-list" aria-label="More blog articles">
-        <h2>More Articles</h2>
-        {laterBlogs.map((blog) => (
-          <article class="blog-card">
+        <h2>From The Partners</h2>
+        {laterPublications.map((publication) => (
+          <article class:list={["blog-card", { "blog-card-with-image": publication.image }]}>
             <div>
-              <p class="blog-meta">{blog.date} · {blog.author}</p>
-              <h3><a href={blog.route}>{blog.title}</a></h3>
-              {blog.subtitle && <p>{blog.subtitle}</p>}
+              <p class="blog-meta"><time datetime={publication.date}>{publication.date}</time> · {publication.publisher}</p>
+              <h3><a href={publicationHref(publication)} rel={publication.kind === "external-article" ? "external" : undefined}>{publication.title}</a></h3>
+              <p>{publication.summary}</p>
+              <p class="publication-origin">With {publication.partner} · {publication.kind === "external-article" ? "Publisher website" : "Reading copy"}</p>
             </div>
           </article>
         ))}
