@@ -226,6 +226,16 @@ if (packageVersion !== packageMetadata.version) {
 
 errors.push(...await getPublicationConfigErrors(siteRoot, publicationConfig));
 
+for (const [label, publicRegister] of [["Tool register", register], ["Publication register", publications], ["News register", news]]) {
+  requireString(publicRegister, "content_version", label);
+  const hasPreviewVersion = /-preview\.\d+$/.test(publicRegister.content_version || "");
+  if (publicationConfig.release_state === "published" && hasPreviewVersion) errors.push(`${label} content_version must not retain a preview suffix in published state`);
+}
+requireString(register, "release_state", "Tool register");
+if (publicationConfig.release_state === "published" && register.release_state !== "published") {
+  errors.push(`Tool register release_state ${register.release_state} must match site release_state ${publicationConfig.release_state}`);
+}
+
 const scanDirectories = [resolve(repoRoot, "docs"), resolve(repoRoot, "blogs"), resolve(repoRoot, "ratio1"), resolve(siteRoot, "src"), resolve(siteRoot, "scripts")];
 const scanRootFiles = ["ACKNOWLEDGEMENTS.md", "CONTRIBUTING.md", "PUBLICATION_POLICY.md", "README.md", "SECURITY.md", "start-website.sh", "site/README.md", "site/astro.config.mjs", "site/package.json"].map((path) => resolve(repoRoot, path));
 const scannedScriptExclusions = new Set(["validate-built-site.mjs", "validate-public-content.mjs"]);

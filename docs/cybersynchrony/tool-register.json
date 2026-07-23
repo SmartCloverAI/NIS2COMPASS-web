@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "content_version": "2026-07-23-preview.4",
+  "content_version": "2026-07-23",
   "last_verified": "2026-07-22",
-  "release_state": "preview",
+  "release_state": "published",
   "scope": "Public-source tool references only. This file does not disclose NIS2COMPASS selection, deployment, access, integration, or pilot status.",
   "modules": [
     {

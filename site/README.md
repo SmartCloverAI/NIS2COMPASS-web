@@ -33,7 +33,7 @@ The `predev` and `prebuild` scripts first validate the public content, then copy
 
 Before serving, the launcher generates `dist/runtime-config.js`. It uses `EE_HOST_ID` from Ratio1 WAR/CAR, accepts `EDGE_NODE_NAME` as a manual fallback, and otherwise sets the visible footer text to `Served by edge node local`. The value is inserted with JSON serialization and rendered as text.
 
-`./start-website.sh check` performs source validation, builds the static site, and automatically checks generated routes, downloadable text artifacts, internal links, canonical metadata, preview no-index metadata, and forbidden private paths. The private consortium release process adds a confidential deny-list scan without embedding protected names in this public repository. `./start-website.sh release-check` is a separate hard gate for the approved funding visibility package, approval references, and public release state.
+`./start-website.sh check` performs source validation, builds the static site, and automatically checks generated routes, downloadable text artifacts, internal links, canonical metadata, publication-state indexing metadata, and forbidden private paths. The private consortium release process adds a confidential deny-list scan without embedding protected names in this public repository. `./start-website.sh release-check` is a separate hard gate for the approved funding visibility package, approval references, and public release state.
 
 ## Ratio1 Worker App Runner Notes
 
@@ -51,6 +51,6 @@ The app is intentionally static and small. It should not require a database, per
 
 ## Publication Configuration
 
-`src/config/publication.json` controls the visible semantic site version, update date, preview indexing, and funding visibility package. Increment `site_version` and `last_updated` with every reviewed site update. Review candidates use `-preview.N`; an approved publication drops the preview suffix. The normal build rejects malformed version metadata, a preview with indexing enabled, and a published state unless the complete release gate passes. Do not change `release_state` to `published` or disable `noindex` until written CYberSynchrony Coordinator direction, review completion, automated checks, public-safe approval references, and explicit operator release approval are all recorded.
+`src/config/publication.json` controls the visible semantic site version, update date, preview indexing, and funding visibility package. Increment `site_version` and `last_updated` with every reviewed site update. Review candidates use `-preview.N`; an approved publication drops the preview suffix. The normal build rejects malformed version metadata, a preview with indexing enabled, and a published state unless the complete release gate passes. Do not change `release_state` to `published` or disable `noindex` until the applicable signed Article 10 instruction or later written CYberSynchrony direction, review completion, automated checks, public-safe approval references, and explicit operator release approval are all recorded.
 
 See [`../ratio1/worker-app-runner.md`](../ratio1/worker-app-runner.md) and [`../ratio1/deployment.example.yaml`](../ratio1/deployment.example.yaml).

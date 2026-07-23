@@ -23,7 +23,7 @@ const isPreview = publicationConfig.release_state !== "published";
     {isPreview && (
       <div class="preview-banner" role="status">
         <strong>{publicationConfig.release_label}</strong>
-        <span>Funding visibility wording and assets await written CYberSynchrony Coordinator direction. This build is not approved for publication.</span>
+        <span>Publication review is incomplete. This build is not approved for publication.</span>
       </div>
     )}
     <header class="site-header">
@@ -58,8 +58,16 @@ const isPreview = publicationConfig.release_state !== "published";
           {publicationConfig.funding_status === "approved" ? (
             <>
               <div class="funding-marks">
-                {publicationConfig.eu_emblem && <img src={publicationConfig.eu_emblem} alt="European Union emblem" />}
-                {publicationConfig.cybersynchrony_logo && <img src={publicationConfig.cybersynchrony_logo} alt="CYberSynchrony" />}
+                {publicationConfig.eu_emblem && (
+                  <div class="funding-mark funding-mark-eu">
+                    <img src={publicationConfig.eu_emblem} alt="Funded by the European Union; ECCC European Cybersecurity Competence Centre acknowledgement" width="6008" height="764" loading="lazy" decoding="async" />
+                  </div>
+                )}
+                {publicationConfig.cybersynchrony_logo && (
+                  <div class="funding-mark funding-mark-cybersynchrony">
+                    <img src={publicationConfig.cybersynchrony_logo} alt="CYberSynchrony project logo" width="1080" height="424" loading="lazy" decoding="async" />
+                  </div>
+                )}
               </div>
               <p>{publicationConfig.funding_sentence}</p>
               <p>{publicationConfig.disclaimer}</p>
@@ -67,7 +75,7 @@ const isPreview = publicationConfig.release_state !== "published";
           ) : (
             <>
               <strong>Funding acknowledgement pending approval</strong>
-              <p>This review candidate intentionally omits an unverified programme sentence and funding marks. They must be added only after written CYberSynchrony Coordinator direction confirms the required visibility wording and assets.</p>
+              <p>This review candidate intentionally omits an unverified funding package. Add it only after the applicable contractual or later written project direction and operator approval are recorded.</p>
             </>
           )}
           <p><a href="https://cybersynchrony.eu/">Visit the CYberSynchrony project website</a></p>

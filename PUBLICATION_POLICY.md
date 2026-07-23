@@ -49,7 +49,7 @@ Before publication, confirm:
 9. Tool references distinguish upstream research links from confirmed CYberSynchrony components and from NIS2COMPASS implementation status.
 10. Partner articles preserve the publisher name and canonical URL.
 11. `./start-website.sh check` passes.
-12. Written CYberSynchrony Coordinator direction has approved the funding sentence, disclaimer, and required marks, and a public-safe approval reference is recorded.
+12. The signed Sub-grant Agreement Article 10 or a later written CYberSynchrony direction authorizes the funding sentence, disclaimer, and required marks, and a public-safe direction reference is recorded.
 13. `./start-website.sh release-check` passes.
 14. The operator has explicitly approved promotion and public release.
 
@@ -57,6 +57,6 @@ Before publication, confirm:
 
 The website configuration at `site/src/config/publication.json` is the release control. A review candidate must use `release_state: preview` and `noindex: true`. Preview builds must display a visible warning and must not silently invent or select unapproved funding-programme wording.
 
-Only the main operator may change the site to `release_state: published`. That change requires written CYberSynchrony Coordinator direction for the funding visibility package, successful automated checks, completed review, explicit public-release approval, and public-safe values for `funding_direction_reference` and `operator_release_approval_reference` in the publication configuration.
+Only the main operator may change the site to `release_state: published`. That change requires the applicable signed Article 10 instruction or later written CYberSynchrony direction for the funding visibility package, successful automated checks, completed review, explicit public-release approval, and public-safe values for `funding_direction_reference` and `operator_release_approval_reference` in the publication configuration.
 
 The public checks scan repository documentation, deployment examples, structured source data, rendered HTML, and downloadable text artifacts. The private consortium release process must additionally run its confidential deny-list scan; confidential pilot and vendor names must never be embedded in public validator code.

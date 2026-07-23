@@ -1,14 +1,14 @@
 {
-  "site_version": "0.2.1-preview.1",
-  "release_state": "preview",
-  "release_label": "Review candidate",
+  "site_version": "0.2.1",
+  "release_state": "published",
+  "release_label": "Published release",
   "last_updated": "2026-07-23",
-  "noindex": true,
-  "funding_status": "pending-written-direction",
-  "funding_sentence": "",
-  "disclaimer": "",
-  "eu_emblem": "",
-  "cybersynchrony_logo": "",
-  "funding_direction_reference": "",
-  "operator_release_approval_reference": ""
+  "noindex": false,
+  "funding_status": "approved",
+  "funding_sentence": "NIS2COMPASS has received funding from the European Union’s Horizon Europe research and innovation programme through the CYberSynchrony Open Call issued and executed under the CYberSynchrony project (Grant Agreement no. 101158555).",
+  "disclaimer": "This material reflects only the author’s views. The European Commission and the CYberSynchrony Consortium are not liable for any use that may be made of the information contained in it.",
+  "eu_emblem": "/funding/eu-eccc-funding-strip.png",
+  "cybersynchrony_logo": "/funding/cybersynchrony-logo.png",
+  "funding_direction_reference": "NIS2COMPASS Sub-grant Agreement, Article 10",
+  "operator_release_approval_reference": "Operator approval, 2026-07-23"
 }

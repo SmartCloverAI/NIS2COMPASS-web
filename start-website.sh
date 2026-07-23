@@ -15,7 +15,7 @@ Commands:
   install   Install website dependencies with npm ci.
   dev       Start the Astro development server on 0.0.0.0:4321.
   build     Install dependencies and build the static website into site/dist.
-  check     Build and validate the review candidate.
+  check     Build and validate the configured publication state.
   release-check  Validate the public-release configuration and funding visibility package.
   start     Validate and serve site/dist on 0.0.0.0:${PORT:-8080}; builds first only if dist is missing.
 

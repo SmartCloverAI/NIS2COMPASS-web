@@ -2,7 +2,7 @@
 
 <img src="site/public/logo.svg" width="72" height="72" alt="NIS2COMPASS logo">
 
-NIS2COMPASS is the public dissemination repository for an 8-month NIS2 readiness, evidence, and cybersecurity improvement project funded by the CYberSynchrony consortium through the Financial Support to Third Parties open-call instrument.
+NIS2COMPASS is the public dissemination repository for an 8-month NIS2 readiness, evidence, and cybersecurity improvement project selected for grant funding by the CYberSynchrony consortium through its Financial Support to Third Parties open call.
 
 This repository contains public-safe documentation, reusable templates, synthetic examples, partner articles, a six-module CYberSynchrony learning centre, a sourced tool directory, sanitized progress notes, and the source for the project website.
 
@@ -11,6 +11,14 @@ This repository contains public-safe documentation, reusable templates, syntheti
 Content development: SmartClover SRL.
 
 Copyright: AI STM Learning SRL and SmartClover SRL, as the NIS2COMPASS consortium partners.
+
+## Funding And Acknowledgements
+
+NIS2COMPASS has received funding from the European Union’s Horizon Europe research and innovation programme through the CYberSynchrony Open Call issued and executed under the CYberSynchrony project (Grant Agreement no. 101158555).
+
+This material reflects only the author’s views. The European Commission and the CYberSynchrony Consortium are not liable for any use that may be made of the information contained in it.
+
+See [Acknowledgements](ACKNOWLEDGEMENTS.md) for the approved funding statement, disclaimer, and official visibility assets used by the website.
 
 ## Public Website
 
@@ -70,7 +78,7 @@ Useful explicit commands for operators:
 ./start-website.sh dev
 ```
 
-Use `./start-website.sh build` when a platform has a separate build phase. Use `./start-website.sh check` to build and verify the candidate. Use `./start-website.sh release-check` only when preparing an approved public release; it intentionally fails while the site remains a no-index review candidate. Use `./start-website.sh start` only when `site/dist` already exists and you want to serve it without forcing a rebuild; the existing output is revalidated before it is served.
+Use `./start-website.sh build` when a platform has a separate build phase. Use `./start-website.sh check` to build and verify the configured publication state. Use `./start-website.sh release-check` before every public deployment to verify the approved funding visibility package and production metadata. Use `./start-website.sh start` only when `site/dist` already exists and you want to serve it without forcing a rebuild; the existing output is revalidated before it is served.
 
 ## Website Versioning
 
@@ -128,9 +136,9 @@ This repository must not contain:
 
 See [`PUBLICATION_POLICY.md`](PUBLICATION_POLICY.md) before publishing new material.
 
-## Review Candidate Status
+## Published Release Status
 
-The website remains a no-index review candidate until the CYberSynchrony Coordinator provides written direction that confirms the authorized funding-programme wording, required disclaimer, European Union emblem, and CYberSynchrony logo treatment. The site displays this state visibly, and `./start-website.sh release-check` remains closed until the approved values, assets, public-safe direction reference, and operator approval reference are configured.
+The website is configured as an indexed public release. Its footer displays the Article 10 funding sentence, author-views and non-liability disclaimer, official EU/ECCC funding strip, and official CYberSynchrony logo. The release gate verifies the exact text, local assets, public-safe direction reference, operator approval reference, and rendered presence of the complete package on every page.
 
 ## Local Site Commands
 

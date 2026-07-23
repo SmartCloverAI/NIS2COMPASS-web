@@ -1,6 +1,9 @@
 import { realpath, stat } from "node:fs/promises";
 import { isAbsolute, relative, resolve, sep } from "node:path";
 
+const article10FundingSentence = "NIS2COMPASS has received funding from the European Union’s Horizon Europe research and innovation programme through the CYberSynchrony Open Call issued and executed under the CYberSynchrony project (Grant Agreement no. 101158555).";
+const approvedDisclaimer = "This material reflects only the author’s views. The European Commission and the CYberSynchrony Consortium are not liable for any use that may be made of the information contained in it.";
+
 function isStrictlyInside(root, path) {
   const relativePath = relative(root, path);
   return relativePath !== "" && relativePath !== ".." && !relativePath.startsWith(`..${sep}`) && !isAbsolute(relativePath);
@@ -32,10 +35,12 @@ export async function getReleaseErrors(siteRoot, config) {
   const errors = getVersionMetadataErrors(config);
   if (config.release_state !== "published") errors.push("release_state must be published");
   if (config.noindex !== false) errors.push("noindex must be false");
-  if (config.funding_status !== "approved") errors.push("funding_status must be approved after written CYberSynchrony Coordinator direction");
+  if (config.funding_status !== "approved") errors.push("funding_status must be approved under the applicable contractual or later written visibility direction");
   for (const field of ["funding_sentence", "disclaimer", "eu_emblem", "cybersynchrony_logo", "funding_direction_reference", "operator_release_approval_reference"]) {
     if (typeof config[field] !== "string" || config[field].trim() === "") errors.push(`${field} is required`);
   }
+  if (config.funding_sentence !== article10FundingSentence) errors.push("funding_sentence must exactly match the approved Article 10 text");
+  if (config.disclaimer !== approvedDisclaimer) errors.push("disclaimer must exactly match the approved public wording");
   const publicRoot = resolve(siteRoot, "public");
   for (const field of ["eu_emblem", "cybersynchrony_logo"]) {
     if (!config[field]) continue;

@@ -73,6 +73,7 @@ const forbiddenPatterns = [
 
 for (const path of textFiles) {
   const content = await readFile(path, "utf8");
+  if (config.release_state === "published" && /-preview\.\d+/i.test(content)) errors.push(`${relative(distRoot, path)} retains a preview version token in published state`);
   for (const [label, pattern] of forbiddenPatterns) {
     if (pattern.test(content)) errors.push(`${relative(distRoot, path)} contains forbidden ${label}`);
     pattern.lastIndex = 0;
@@ -88,6 +89,11 @@ for (const path of htmlFiles) {
   if (config.release_state === "preview" && !hasNoIndex) errors.push(`${relative(distRoot, path)} is missing preview no-index metadata`);
   if (config.release_state === "published" && hasNoIndex) errors.push(`${relative(distRoot, path)} retains preview no-index metadata in published state`);
   if (config.release_state === "preview" && !html.includes("This build is not approved for publication.")) errors.push(`${relative(distRoot, path)} is missing the preview warning`);
+  if (config.release_state === "published" && html.includes("This build is not approved for publication.")) errors.push(`${relative(distRoot, path)} retains the preview warning in published state`);
+  if (config.release_state === "published" && !html.includes(escapeHtmlText(config.funding_sentence))) errors.push(`${relative(distRoot, path)} is missing the approved funding sentence`);
+  if (config.release_state === "published" && !html.includes(escapeHtmlText(config.disclaimer))) errors.push(`${relative(distRoot, path)} is missing the approved disclaimer`);
+  if (config.release_state === "published" && !html.includes(`src="${config.eu_emblem}"`)) errors.push(`${relative(distRoot, path)} is missing the approved European Union and ECCC funding mark`);
+  if (config.release_state === "published" && !html.includes(`src="${config.cybersynchrony_logo}"`)) errors.push(`${relative(distRoot, path)} is missing the approved CYberSynchrony logo`);
   if (!html.includes(`Version <strong>${config.site_version}</strong>`)) errors.push(`${relative(distRoot, path)} is missing the current public site version`);
   if (!html.includes("Served by edge node <strong data-edge-node-name>local</strong>")) errors.push(`${relative(distRoot, path)} is missing the local edge-node fallback`);
 

@@ -1098,8 +1098,11 @@ th {
 }
 
 .funding-notice {
-  padding-left: 1rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
   border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  background: #f7faf6;
 }
 
 .footer-runtime {
@@ -1115,17 +1118,40 @@ th {
 }
 
 .funding-marks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(8rem, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 0.55rem;
 }
 
-.funding-marks img {
-  width: auto;
-  max-width: 12rem;
-  height: 3.5rem;
+.funding-mark {
+  display: flex;
+  min-height: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+  overflow: hidden;
+}
+
+.funding-mark-eu {
+  background: #1a2333;
+}
+
+.funding-mark-cybersynchrony {
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.funding-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 3.8rem;
   object-fit: contain;
+}
+
+.funding-mark-eu img {
+  max-height: 3.4rem;
 }
 
 @media (max-width: 900px) {
@@ -1213,9 +1239,8 @@ th {
 
   .funding-notice {
     padding-top: 1rem;
-    padding-left: 0;
     border-top: 3px solid var(--gold);
-    border-left: 0;
+    border-left: 1px solid var(--line);
   }
 }
 
@@ -1231,6 +1256,10 @@ th {
 
   .preview-banner strong {
     display: block;
+  }
+
+  .funding-marks {
+    grid-template-columns: 1fr;
   }
 
   h1 {
