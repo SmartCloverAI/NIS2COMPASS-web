@@ -6,6 +6,10 @@ const { title, description = "NIS2COMPASS public documentation.", currentSlug = 
 const navGroups = getDocsNav();
 const artifactLinks = getArtifactLinks();
 const publicPositionSlugs = new Set([
+  "evidence-graph",
+  "evidence-graph/reading-the-graph",
+  "evidence-graph/review-and-corrections",
+  "evidence-graph/findings-and-exports",
   "phishing-awareness",
   "phishing-awareness/everyday-examples",
   "phishing-awareness/phishing-in-numbers",
@@ -67,7 +71,7 @@ const publicPositionSlugs = new Set([
         </ul>
       </div>
     </aside>
-    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug), "learning-doc": currentSlug.startsWith("phishing-awareness") }]}>
+    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug), "learning-doc": currentSlug.startsWith("phishing-awareness"), "evidence-graph-doc": currentSlug.startsWith("evidence-graph") }]}>
       <slot />
     </article>
   </div>

@@ -30,9 +30,19 @@ const navGroups = [
     ]
   },
   {
+    title: "Evidence Graph",
+    items: [
+      ["evidence-graph", "Evidence Graph"],
+      ["evidence-graph/reading-the-graph", "Reading the Graph"],
+      ["evidence-graph/review-and-corrections", "Review and Corrections"],
+      ["evidence-graph/findings-and-exports", "Findings and Exports"]
+    ]
+  },
+  {
     title: "Phishing Awareness",
     items: [
       ["phishing-awareness", "Phishing Awareness"],
+      ["phishing-awareness/quiz", "Phishing Self-Check"],
       ["phishing-awareness/everyday-examples", "Everyday Examples"],
       ["phishing-awareness/recognise-and-respond", "Recognise And Respond"],
       ["phishing-awareness/phishing-in-numbers", "Phishing In Numbers"],

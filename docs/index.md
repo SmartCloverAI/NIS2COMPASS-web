@@ -12,12 +12,14 @@ Copyright: AI STM Learning SRL and SmartClover SRL as the NIS2COMPASS consortium
 2. [Project news register](/news/)
 3. [NIS2 in plain language](nis2-in-plain-language.md)
 4. [Phishing awareness](phishing-awareness/README.md)
-5. [Eight selected CYberSynchrony tools](cybersynchrony/selected-tools.md)
-6. [Six CYberSynchrony modules](cybersynchrony-alignment.md)
-7. [Public upstream tool reference directory](/tools/)
-8. [Project progress](progress/README.md), including the [28 October 2026 update](progress/2026-10-project-update.md) and [Month 1 note](progress/2026-06-month-1.md)
-9. [Partner articles](/blogs/)
-10. [Glossary](glossary.md)
+5. [NIS2COMPASS phishing self-check](/docs/phishing-awareness/quiz/)
+6. [Evidence Graph](evidence-graph/README.md)
+7. [Eight selected CYberSynchrony tools](cybersynchrony/selected-tools.md)
+8. [Six CYberSynchrony modules](cybersynchrony-alignment.md)
+9. [Public upstream tool reference directory](/tools/)
+10. [Project progress](progress/README.md), including the [28 October 2026 update](progress/2026-10-project-update.md) and [Month 1 note](progress/2026-06-month-1.md)
+11. [Partner articles](/blogs/)
+12. [Glossary](glossary.md)
 
 ## Reusable Material
 

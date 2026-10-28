@@ -48,6 +48,8 @@ Separate contact gives the real service or colleague a chance to confirm the req
 
 ## Continue Learning
 
+[NIS2COMPASS phishing self-check](/docs/phishing-awareness/quiz/)
+
 Try the [Everyday Examples](everyday-examples.md), keep [Recognise And Respond](recognise-and-respond.md) available, or read the [Project Approach](project-approach.md) for facilitated learning.
 
 > As of 28 October 2026, NIS2COMPASS has prepared this learning approach. Preparation does not establish completed training, delivered simulations or measured improvement. See the [October project update](../progress/2026-10-project-update.md).

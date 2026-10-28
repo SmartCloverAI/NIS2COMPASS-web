@@ -22,10 +22,13 @@ for (const item of news.items) {
   urls.add(item.source_url);
 }
 
-const learningRoot = resolve(repoRoot, "docs/phishing-awareness");
-const learningFiles = (await readdir(learningRoot))
-  .filter((name) => name.endsWith(".md") && name !== "_TODO.md")
-  .map((name) => resolve(learningRoot, name));
+const learningFiles = [];
+for (const directory of ["docs/phishing-awareness", "docs/evidence-graph"]) {
+  const learningRoot = resolve(repoRoot, directory);
+  learningFiles.push(...(await readdir(learningRoot))
+    .filter((name) => name.endsWith(".md") && name !== "_TODO.md")
+    .map((name) => resolve(learningRoot, name)));
+}
 learningFiles.push(resolve(repoRoot, "docs/playbooks/awareness-and-phishing-metrics-guide.md"));
 for (const path of learningFiles) {
   const tokens = marked.lexer(await readFile(path, "utf8"));
@@ -39,7 +42,7 @@ async function check(url) {
   const timeout = setTimeout(() => controller.abort(), 20000);
   try {
     let response = await fetch(url, { method: "HEAD", redirect: "follow", signal: controller.signal, headers: { "user-agent": "NIS2COMPASS-public-link-check/1.0" } });
-    if (response.status === 405 || response.status === 403) {
+    if ([403, 404, 405].includes(response.status)) {
       response = await fetch(url, { method: "GET", redirect: "follow", signal: controller.signal, headers: { range: "bytes=0-0", "user-agent": "NIS2COMPASS-public-link-check/1.0" } });
     }
     return { url, ok: response.ok, status: response.status };

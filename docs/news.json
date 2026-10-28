@@ -1,8 +1,30 @@
 {
   "schema_version": "1.0.0",
-  "content_version": "2026-10-28",
-  "last_verified": "2026-07-23",
+  "content_version": "2026-10-29",
+  "last_verified": "2026-10-29",
   "items": [
+    {
+      "id": "n2c-evidence-graph-guide-20261029",
+      "date": "2026-10-29",
+      "date_label": "29 October 2026",
+      "category": "Learning resource",
+      "title": "Evidence Graph",
+      "summary": "The Evidence Graph is the part of NIS2COMPASS that keeps track of a business's security records and the people who checked each one. This section explains the idea in plain language and uses screenshots to walk through the live alpha.",
+      "href": "/docs/evidence-graph/",
+      "source_label": "Evidence Graph",
+      "source_url": "https://www.nis2compass.eu/docs/evidence-graph/"
+    },
+    {
+      "id": "n2c-phishing-self-check-20261029",
+      "date": "2026-10-29",
+      "date_label": "29 October 2026",
+      "category": "Learning resource",
+      "title": "NIS2COMPASS phishing self-check",
+      "summary": "Practise recognising deceptive messages and choosing a safe response in ten fictional situations.",
+      "href": "/docs/phishing-awareness/quiz/",
+      "source_label": "NIS2COMPASS phishing self-check",
+      "source_url": "https://www.nis2compass.eu/docs/phishing-awareness/quiz/"
+    },
     {
       "id": "n2c-phishing-learning-guide-20261028",
       "date": "2026-10-28",

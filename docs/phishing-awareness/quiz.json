@@ -1,0 +1,160 @@
+{
+  "title": "NIS2COMPASS phishing self-check",
+  "description": "Practise recognising deceptive messages and choosing a safe response in ten fictional situations.",
+  "intro": "This voluntary self-practice uses fictional examples. It is not a phishing simulation, an employee assessment, a certificate, evidence of formal training completion, or organisational approval. There is no pass mark or grade.",
+  "notice": "In this quiz, choices stay only in this page's memory. No answer, name, identity, or numeric correctness or risk score is saved or sent. Reloading the page or selecting Restart clears all choices.",
+  "instructions": "Choose one option for each question, then select Check answer to see supportive feedback. Use Previous and Next to move through the questions. After the final question, you can review your answers or restart the quiz.",
+  "labels": {
+    "question": "Question",
+    "of": "of",
+    "check": "Check answer",
+    "next": "Next",
+    "previous": "Previous",
+    "restart": "Restart",
+    "correct": "Correct",
+    "incorrect": "Not the safest response",
+    "answer": "Safest answer",
+    "progress": "Progress",
+    "completed": "Self-check complete",
+    "review": "Review answers",
+    "noJavascript": "Interactive controls need JavaScript. The complete questions, safest answers and explanations remain available without JavaScript."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "title": "An urgent supplier request",
+      "prompt": "A message from a familiar supplier asks you to use a new contact number and urgently approve an unusual request. What is the best next step?",
+      "options": [
+        "Use the new number because the supplier's name is familiar.",
+        "Verify through established contact details or an organisational process obtained independently of the message.",
+        "Forward the request widely so someone else can decide."
+      ],
+      "answer": 1,
+      "explanation": "Use contact details or a verification process that you obtained separately from the message. A familiar name and urgent wording do not prove that a request is genuine. Independent verification avoids relying on details supplied by a possible attacker, while unnecessary forwarding could spread the message or expose information.",
+      "context": ""
+    },
+    {
+      "id": "q2",
+      "title": "An unexpected sign-in page",
+      "prompt": "An unplanned message says that your account needs attention and links to a sign-in page. What should you do?",
+      "options": [
+        "Open the genuine service through a known route and check the request; report the message if it remains suspicious.",
+        "Enter your password to see whether the page accepts it.",
+        "Enter only part of the password as a test."
+      ],
+      "answer": 0,
+      "explanation": "Open the service through a trusted bookmark, official application, or another route you already know. A sign-in page can be copied to look genuine, so never enter all or part of a password into an unverified page. Report the message through your organisation's approved route if it still appears suspicious.",
+      "context": ""
+    },
+    {
+      "id": "q3",
+      "title": "A message with polished language",
+      "prompt": "A message has no spelling mistakes and uses the organisation's logo. Does that establish that it is safe?",
+      "options": [
+        "Yes, because fraudulent messages always contain errors.",
+        "Yes, if the request is brief.",
+        "No; the sender, context, requested action and destination still require appropriate verification."
+      ],
+      "answer": 2,
+      "explanation": "Check who sent the message, why you received it, what it asks you to do, and where any link leads. Good writing and copied branding can make a fraudulent message look convincing, but presentation does not prove the sender's identity or authority.",
+      "context": ""
+    },
+    {
+      "id": "q4",
+      "title": "Reporting a suspicious message",
+      "prompt": "You have not clicked a suspicious message. Is reporting still useful?",
+      "options": [
+        "No, because nothing happened.",
+        "Yes; use the organisation's approved reporting route and provide only the minimum information requested by that procedure.",
+        "Only if you first open every link to gather evidence."
+      ],
+      "answer": 1,
+      "explanation": "Report the message through the approved route even if you did not click anything. Your report can help the responsible team identify and respond to a threat. Provide only what the reporting procedure requests, and do not investigate by opening suspicious links or attachments.",
+      "context": ""
+    },
+    {
+      "id": "q5",
+      "title": "An accidental click",
+      "prompt": "You clicked an unexpected link and now suspect that the message was deceptive. What should you do?",
+      "options": [
+        "Stop interacting, report promptly and follow the organisation's incident instructions.",
+        "Hide the event because reporting could be embarrassing.",
+        "Continue through the page to understand the full process."
+      ],
+      "answer": 0,
+      "explanation": "Stop using the page, report the event promptly, and follow the instructions given by your organisation. Quick reporting gives the responsible team a chance to assess what happened and advise you. Continuing or investigating on your own could increase the exposure.",
+      "context": ""
+    },
+    {
+      "id": "q6",
+      "title": "An unexpected authentication request",
+      "prompt": "You receive an authentication approval request, such as a sign-in notification or one-time code, that you did not initiate. What is the safest response?",
+      "options": [
+        "Approve it to remove the notification.",
+        "Share the request or code with the person who says they are helping.",
+        "Do not approve or share it; use the approved support or security route to check and report the event."
+      ],
+      "answer": 2,
+      "explanation": "Reject or leave the unexpected request unapproved, do not share its code, and contact support or security through an approved route. An unrequested approval may mean that someone is trying to access your account. Approval notifications and one-time codes can grant access, so they must not be given to anyone, including a person who says they are helping.",
+      "context": ""
+    },
+    {
+      "id": "q7",
+      "title": "A sensitive document request",
+      "prompt": "A message asks for a customer-related or patient-related document and claims to have senior approval. What should happen before disclosure?",
+      "options": [
+        "Send the document because senior approval is mentioned.",
+        "Verify the requester's authority and the approved sharing process, and disclose only what that process permits.",
+        "Send a larger set of records so the requester can choose."
+      ],
+      "answer": 1,
+      "explanation": "Confirm the requester's authority through an established route and follow the approved information-sharing process. A claim of senior approval in a message does not prove authorisation. The approved process determines whether information may be shared and limits disclosure to what is permitted.",
+      "context": ""
+    },
+    {
+      "id": "q8",
+      "title": "Safe reporting content",
+      "prompt": "Which information must not be collected by a simulation or training exercise?",
+      "options": [
+        "Passwords, authentication codes, unnecessary sensitive content and unrelated personal information.",
+        "The fact that a suspicious request was received.",
+        "The time of the event when the approved reporting procedure requests it."
+      ],
+      "answer": 0,
+      "explanation": "Never provide or collect passwords, one-time authentication codes, real sensitive records, or unrelated personal details for an exercise. These details could expose accounts or people. A report should contain only the information required by the organisation's approved procedure.",
+      "context": ""
+    },
+    {
+      "id": "q9",
+      "title": "A group campaign result",
+      "prompt": "In a fictional awareness exercise, a group's click rate falls after training. Which conclusion is justified by that observation alone?",
+      "options": [
+        "Every individual in the group is now secure.",
+        "Training was certainly the only cause of the change.",
+        "The measured group result changed; interpretation also depends on comparable campaigns and the other recorded conditions."
+      ],
+      "answer": 2,
+      "explanation": "Treat the result only as evidence that the measured group outcome changed. Before drawing a wider conclusion, compare exercises conducted under similar conditions and consider other recorded factors. One group measurement cannot prove each person's ability or show that training was the only cause.",
+      "context": "This is an extra interpretation topic for managers and facilitators, and it is written so that everyone can use it."
+    },
+    {
+      "id": "q10",
+      "title": "Applying the local procedure",
+      "prompt": "Where should you obtain the correct route for reporting a suspicious message or requesting help?",
+      "options": [
+        "From a contact supplied only in the suspicious message.",
+        "From the organisation's established instructions, approved service portal or independently verified support contact.",
+        "From whichever external website appears first in a search."
+      ],
+      "answer": 1,
+      "explanation": "Use your organisation's established instructions, approved help portal, or a support contact that you verified independently. This directs the report to the responsible team and the correct handling process. A contact in the suspicious message or an unverified search result could lead back to an attacker.",
+      "context": ""
+    }
+  ],
+  "completion": {
+    "title": "You have completed the phishing self-check",
+    "body": "You have reviewed all ten situations. There is no grade or pass mark. Before you finish, find your own organisation's approved route for reporting suspicious messages or requesting help. Use established instructions, an approved help portal, or an independently verified support contact. Do not type the route or any sensitive details into this website.",
+    "linkText": "Learn how to recognise and respond to phishing",
+    "linkHref": "/docs/phishing-awareness/recognise-and-respond/"
+  }
+}

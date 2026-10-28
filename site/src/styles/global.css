@@ -895,6 +895,39 @@ h3 {
   border-radius: 8px;
 }
 
+.evidence-graph-doc {
+  min-width: 0;
+}
+
+.evidence-graph-doc .rendered-doc table {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.evidence-graph-doc .rendered-doc :is(th, td) {
+  min-width: 12rem;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.evidence-graph-doc .rendered-doc :is(th, td):first-child {
+  min-width: 7.5rem;
+}
+
+.evidence-graph-doc .rendered-doc a:has(> img) {
+  display: block;
+  margin-block: 1.5rem 0.75rem;
+}
+
+.evidence-graph-doc .rendered-doc a > img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+}
+
 .blog-article {
   max-width: 66rem;
 }

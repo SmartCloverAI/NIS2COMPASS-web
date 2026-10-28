@@ -1,8 +1,8 @@
 {
-  "site_version": "0.4.0",
+  "site_version": "0.5.0",
   "release_state": "published",
   "release_label": "Published release",
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-10-29",
   "noindex": false,
   "funding_status": "approved",
   "funding_sentence": "NIS2COMPASS has received funding from the European Union’s Horizon Europe research and innovation programme through the CYberSynchrony Open Call issued and executed under the CYberSynchrony project (Grant Agreement no. 101158555).",
@@ -10,5 +10,5 @@
   "eu_emblem": "/funding/eu-eccc-funding-strip.png",
   "cybersynchrony_logo": "/funding/cybersynchrony-logo.png",
   "funding_direction_reference": "NIS2COMPASS Sub-grant Agreement, Article 10",
-  "operator_release_approval_reference": "Operator approval to publish the expanded phishing guidance after council approval, 2026-10-28"
+  "operator_release_approval_reference": "Operator approval to publish the Evidence Graph guide and phishing quiz after council approval, 2026-10-28"
 }
