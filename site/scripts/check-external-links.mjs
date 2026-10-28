@@ -1,6 +1,7 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { marked } from "marked";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, "../..");
@@ -19,6 +20,18 @@ for (const publication of publications.publications) urls.add(publication.canoni
 for (const item of news.items) {
   if (item.href.startsWith("https://")) urls.add(item.href);
   urls.add(item.source_url);
+}
+
+const learningRoot = resolve(repoRoot, "docs/phishing-awareness");
+const learningFiles = (await readdir(learningRoot))
+  .filter((name) => name.endsWith(".md") && name !== "_TODO.md")
+  .map((name) => resolve(learningRoot, name));
+learningFiles.push(resolve(repoRoot, "docs/playbooks/awareness-and-phishing-metrics-guide.md"));
+for (const path of learningFiles) {
+  const tokens = marked.lexer(await readFile(path, "utf8"));
+  marked.walkTokens(tokens, (token) => {
+    if (token.type === "link" && token.href.startsWith("https://")) urls.add(token.href);
+  });
 }
 
 async function check(url) {

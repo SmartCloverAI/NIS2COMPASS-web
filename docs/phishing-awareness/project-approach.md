@@ -1,37 +1,53 @@
 # The NIS2COMPASS Awareness Approach
 
-NIS2COMPASS has prepared a sequence of an initial authorised phishing simulation, training matched to people's work, and a comparable follow-up. A simulation is a controlled exercise using a made-up suspicious message to support learning.
+NIS2COMPASS has prepared learning that helps people handle suspicious requests in their everyday work. Phishing is a deception intended to obtain money, information or account access. The learning concentrates on the decision someone faces: what is being requested, what remains uncertain and where to get trusted help.
 
-> Public reporting boundary: 28 October 2026. This page describes awareness preparation, not completed training, delivered campaigns or measured improvement. No numeric awareness outcomes are reported here.
+As of 28 October 2026, this page describes a prepared method. It does not report completed training, delivered simulations or measured improvement. You can read the public lessons without participating in a project activity.
 
-## Before An Exercise
+## Three Actions To Demonstrate
 
-Staff-facing simulations require explicit approval for the activity, agreed data handling and participant safeguards. Joining the project does not grant permission to run them. Technical collection and uploads also require their own approvals.
+Participants work with fictional situations and practise three actions:
 
-> The planned safeguards exclude collecting passwords, authentication codes, document uploads or free-text secrets. Exercises must not use harmful attachments or score people for employment decisions.
+1. Recognise the request and uncertainty. Explain what the person is being asked to do and what has not been established. A familiar name or convincing page is not enough to settle the question.
+2. Verify independently. Select a known contact or service reached without using the suspect request's links or new contact details. Explain why this provides a separate check.
+3. Report. Demonstrate or describe how to use the organisation's approved channel and give the necessary context without sharing secrets or sensitive documents.
 
-Training should help participants recognise risks relevant to their roles, without blame or staff rankings.
+A participant does not have to identify an attack technique or prove fraud. Describing an unresolved concern and finding the correct local procedure are useful actions. The [Everyday Examples](everyday-examples.md) offer public practice with the same decision-making focus.
 
-## The Learning Sequence
+## The Prepared 120-Minute Session
 
-1. An approved initial exercise establishes a starting point using a documented measurement method.
-2. Role-appropriate training addresses practical recognition and reporting, including what to do after a mistake.
-3. A follow-up uses comparable participants, observation periods and message difficulty so that any comparison has a clear basis.
+Before delivery, the facilitator confirms the organisation's actual reporting channels, relevant roles, accessible format and completion rule. A route that staff cannot find or use needs attention before the exercise begins.
 
-The two main pilots and three additional organisations in the smaller workstream have different scopes. Awareness work must follow the approvals for each organisation; there is no blanket campaign permission across participants.
+- Minutes 0-20 cover the purpose, responsibilities and local reporting route. Participants establish where a concern should go.
+- Minutes 20-50 use recognition and verification scenarios. Participants identify the request and choose an independent check.
+- Minutes 50-70 focus on safe reporting, including the information that helps a responder and the information that should not be sent.
+- Minutes 70-90 address accidental interactions and unexpected sign-in approval requests. Participants consider how to seek help after something has happened.
+- Minutes 90-120 cover the knowledge check, demonstrations of the three actions and further learning.
 
-## What The Measurements Mean
+The session uses made-up situations, without opening suspicious links, entering real credentials or handling sensitive records. A password or authentication code, meaning a code used to confirm access, is never needed for the practice.
 
-Attendance and completion describe participation in training. Delivery, clicking and reporting describe different events in a simulation. A delivered email does not show that a person read it, and a training completion record does not establish safer behaviour.
+## Match The Situation To The Work
 
-The measurement method must count unique human actions, exclude failed deliveries from delivery-based denominators, exclude automated security-scanning events from human-action counts, and state who and what each percentage includes. Automated checks can open links without a person doing so. Reviewers must resolve those events before treating them as participant actions.
+A supplier-contact change gives a purchasing or finance colleague a reason to find an existing approved contact record. An unexpected account notice gives a staff member a reason to use the known helpdesk route. A sensitive-document request asks a document owner to consider permission as well as identity.
 
-Compare like-for-like groups and conditions. If the initial click rate is zero, a relative reduction cannot be meaningfully calculated. Report that limitation instead of claiming an improvement.
+These examples make the reasoning concrete without describing a real incident. The facilitator can ask which part of the request is unverified and let the participant explain the next step. Good spelling alone is not a successful check. Neither is calling a new number supplied in the same message.
 
-> Public reporting is limited to reviewed group-level findings. Small groups must be suppressed where people could be identified. Individual records, staff rankings and operational campaign settings are not public outputs.
+## Completion And Supportive Feedback
+
+Verified training completion requires the assigned learning and demonstration of all three actions. If an action is missing, the facilitator gives corrective feedback and an equivalent example so the participant can try again. The purpose is to resolve the gap without blame.
+
+Attendance shows presence, not completion. Reading these pages or revealing public self-check answers does not verify an individual's actions. Anonymous group answers can help a discussion, but cannot substitute for an individual completion decision. The public self-checks do not issue a certificate.
+
+## Initial Exercise, Learning And Follow-Up
+
+The planned sequence begins with an authorised simulation, a controlled exercise using a fictional suspicious request. Relevant learning follows. A later exercise provides a comparison only if the participants, observation period, message difficulty and counting method are sufficiently equivalent. A lower click rate alone cannot establish that teaching caused the change.
+
+The two main pilots and three additional organisations in the smaller workstream have different scopes. Joining the project does not authorise the same activities everywhere. Organisation-specific authority, privacy and workforce decisions, and rehearsal come before real activity.
+
+> Safeguards: public learning does not authorise a simulation. Each staff-facing activity needs explicit approval and agreed data handling; technical collection or transfers need their own approval. Exercises exclude password, code, document and free-text secret collection, harmful attachments, individual profiling and staff rankings. They must not support employment scoring. Share only reviewed group findings, with small groups suppressed where people could be identified.
 
 ## Separate From TrustSENSE
 
-The selected CYBERWISE tool, TrustSENSE, supports a group discussion and consensus assessment of artificial intelligence trustworthiness and readiness. It is separate from phishing simulations, training completion and phishing outcomes. Its group assessment does not prove NIS2 maturity.
+TrustSENSE supports a facilitated group-consensus assessment of artificial intelligence trustworthiness and readiness. It is separate from phishing exercises, knowledge checks and training completion. Its assessment does not establish organisational maturity under NIS2, the European Union's cybersecurity directive. Prepared learning likewise establishes neither compliance certification nor achieved project outcomes.
 
-See the [eight selected tools](../cybersynchrony/selected-tools.md), the [metrics guide](../playbooks/awareness-and-phishing-metrics-guide.md) and [practical phishing advice](recognise-and-respond.md).
+See the [facilitator metrics guide](../playbooks/awareness-and-phishing-metrics-guide.md) for counting and comparison, or [Recognise And Respond](recognise-and-respond.md) for practical help.

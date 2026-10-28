@@ -7,8 +7,11 @@ const navGroups = getDocsNav();
 const artifactLinks = getArtifactLinks();
 const publicPositionSlugs = new Set([
   "phishing-awareness",
+  "phishing-awareness/everyday-examples",
+  "phishing-awareness/phishing-in-numbers",
   "phishing-awareness/recognise-and-respond",
   "phishing-awareness/project-approach",
+  "playbooks/awareness-and-phishing-metrics-guide",
   "cybersynchrony/selected-tools",
   "progress/2026-10-project-update",
   "playbooks/awareness-and-phishing-metrics-guide",
@@ -64,7 +67,7 @@ const publicPositionSlugs = new Set([
         </ul>
       </div>
     </aside>
-    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug) }]}>
+    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug), "learning-doc": currentSlug.startsWith("phishing-awareness") }]}>
       <slot />
     </article>
   </div>

@@ -4,6 +4,17 @@
   "last_verified": "2026-07-23",
   "items": [
     {
+      "id": "n2c-phishing-learning-guide-20261028",
+      "date": "2026-10-28",
+      "date_label": "28 October 2026",
+      "category": "Learning resource",
+      "title": "NIS2COMPASS expands its public phishing learning guide",
+      "summary": "The guide explains phishing through everyday examples, reader decision checks and practical advice for suspicious requests or accidental interactions. It includes sourced figures and the prepared learning approach, without claiming delivered training or campaign results.",
+      "href": "/docs/phishing-awareness/",
+      "source_label": "Read the phishing learning guide",
+      "source_url": "https://www.nis2compass.eu/docs/phishing-awareness/"
+    },
+    {
       "id": "n2c-october-2026-project-update",
       "date": "2026-10-28",
       "date_label": "28 October 2026",

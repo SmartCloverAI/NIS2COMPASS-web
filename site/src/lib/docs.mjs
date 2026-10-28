@@ -33,7 +33,9 @@ const navGroups = [
     title: "Phishing Awareness",
     items: [
       ["phishing-awareness", "Phishing Awareness"],
+      ["phishing-awareness/everyday-examples", "Everyday Examples"],
       ["phishing-awareness/recognise-and-respond", "Recognise And Respond"],
+      ["phishing-awareness/phishing-in-numbers", "Phishing In Numbers"],
       ["phishing-awareness/project-approach", "Project Approach"]
     ]
   },

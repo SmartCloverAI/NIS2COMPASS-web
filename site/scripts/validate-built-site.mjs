@@ -23,6 +23,8 @@ const requiredRoutes = [
   "/docs/progress/2026-06-month-1/",
   "/docs/progress/2026-10-project-update/",
   "/docs/phishing-awareness/",
+  "/docs/phishing-awareness/everyday-examples/",
+  "/docs/phishing-awareness/phishing-in-numbers/",
   "/docs/phishing-awareness/recognise-and-respond/",
   "/docs/phishing-awareness/project-approach/",
   "/docs/cybersynchrony/selected-tools/",
