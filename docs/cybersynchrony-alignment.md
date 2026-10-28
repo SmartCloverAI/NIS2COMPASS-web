@@ -6,6 +6,12 @@ CYberSynchrony is a European modular cybersecurity project built around people, 
 >
 > This page describes the public CYberSynchrony framework and independently available tool references. It does not claim that a tool has been deployed by NIS2COMPASS, that a private CYberSynchrony interface is available, or that an integration has been completed.
 
+## NIS2COMPASS Tool Selection
+
+Six modules group related functions; the [eight selected tools](cybersynchrony/selected-tools.md) are the specific components chosen by NIS2COMPASS. The selection guide explains their purposes, expected outputs and conditions across the two main pilots and three additional light-touch organisations.
+
+> Selection note: 28 October 2026. The upstream references below are not an alternative selection list. Selection does not establish deployment, completed activity, funder acceptance or NIS2 compliance.
+
 ## Module Overview
 
 | Module | Plain-language role | Explore |
@@ -32,16 +38,20 @@ The real CYberSynchrony architecture is more interconnected than this learning s
 
 ## Public Tool References
 
-Public CYberSynchrony deliverables name MISP, Wazuh, Suricata, and WEKA. NIS2COMPASS presents those projects as learning and research references; the table also includes Apache Caldera as a separate independent reference relevant to controlled validation. None of these listings is proof of NIS2COMPASS selection, deployment, or integration.
+Public CYberSynchrony deliverables name MISP, Wazuh, Suricata, and WEKA. NIS2COMPASS presents those projects as learning and research references; the table also includes Apache Caldera as a separate independent reference relevant to controlled validation.
+
+> These upstream listings alone do not establish NIS2COMPASS selection, deployment or integration. Wazuh and Suricata have supporting roles described in the selected-tools guide, but are not additional selected CYberSynchrony tools.
 
 | Module context | Public upstream references |
 | --- | --- |
 | CYRESCUE | [Apache Caldera](https://caldera.apache.org/) as an independent controlled adversary-emulation research reference; it is not presented as a CYberSynchrony-supplied component. |
 | CYBERRA | [MISP](https://www.misp-project.org/) for structured cyber-threat intelligence. |
 | CYBRITE | [Wazuh](https://wazuh.com/), [Suricata](https://suricata.io/), and [WEKA](https://ml.cms.waikato.ac.nz/weka/) as publicly documented monitoring and analytics foundations. |
-| CROSS-CORE | No independently downloadable open-source implementation is claimed by NIS2COMPASS on this page. |
-| CYBERWISE | No product or individual-scoring tool is named by NIS2COMPASS on this page. |
-| CYBERGOPLUS | No open-source module implementation is claimed by NIS2COMPASS on this page. |
+| CROSS-CORE | Public data-exchange and evidence-integrity descriptions are linked on the module page. |
+| CYBERWISE | Public awareness and training descriptions are linked on the module page; the selected TrustSENSE tool is described separately. |
+| CYBERGOPLUS | Public policy and compliance descriptions are linked on the module page. |
+
+> No independently downloadable open-source implementation is claimed here for CROSS-CORE or CYBERGOPLUS. No individual-scoring tool is listed for CYBERWISE. Public descriptions do not establish software availability.
 
 See the [public tool reference directory](/tools/) for source repositories, documentation, licence references, relationship labels, and verification dates.
 

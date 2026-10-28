@@ -2,6 +2,14 @@
 
 This section provides a public-source guide to the six CYberSynchrony modules and the results that help explain them.
 
+## NIS2COMPASS Selection
+
+The [eight selected tools](selected-tools.md) are specific components within the six modules. The selection guide explains their intended roles in the two main pilots and the smaller workstream for three additional organisations, including the conditions for use.
+
+> Selection note: 28 October 2026. The eight-tool selection is distinct from the upstream reference directory. Selection does not establish deployment, integration, completed activity or NIS2 compliance.
+
+## Explore The Modules
+
 Start with the [six-module overview](/docs/cybersynchrony-alignment/), then open a module page:
 
 - [CYRESCUE](/docs/cybersynchrony/modules/cyrescue/)
@@ -25,4 +33,4 @@ The [public tool reference directory](/tools/) distinguishes open-source upstrea
 - [D5.2: Evidence Integrity System](https://cybersynchrony.eu/wp-content/uploads/2025/09/CYberSynchrony_D5.2_Evidence-Integrity-System-v1_V1.0.pdf)
 - [D8.1: Integration Blueprint and Use Case Portfolio](https://cybersynchrony.eu/wp-content/uploads/2025/09/CYberSynchrony_D8.1_CYberSynchrony-Integration-Blueprint-Use-Case-Portfolio-V1_V1.0_eBOS-2.pdf)
 
-These links point to public CYberSynchrony materials. Their presence does not mean that the underlying private platform, sandbox, API, or support route is open to the public.
+> These links point to public CYberSynchrony materials. Their presence does not mean that the underlying private platform, sandbox, API, or support route is open to the public. A platform manual is not a software download.

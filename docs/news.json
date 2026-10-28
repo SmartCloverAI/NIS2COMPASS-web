@@ -1,8 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "content_version": "2026-07-23",
+  "content_version": "2026-10-28",
   "last_verified": "2026-07-23",
   "items": [
+    {
+      "id": "n2c-october-2026-project-update",
+      "date": "2026-10-28",
+      "date_label": "28 October 2026",
+      "category": "Project update",
+      "title": "NIS2COMPASS sets out its selected tools and awareness preparation",
+      "summary": "The project update explains the eight selected CYberSynchrony tools, the two main pilots and smaller light-touch workstream, and the prepared awareness sequence. Selection and preparation are distinct from completed activity or measured improvement.",
+      "href": "/docs/progress/2026-10-project-update/",
+      "source_label": "Read the 28 October project update",
+      "source_url": "https://www.nis2compass.eu/docs/progress/2026-10-project-update/"
+    },
     {
       "id": "aistm-article-1",
       "date": "2026-06-16",

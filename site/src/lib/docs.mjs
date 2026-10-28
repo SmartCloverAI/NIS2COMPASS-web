@@ -23,9 +23,25 @@ const navGroups = [
     ]
   },
   {
+    title: "Blogs",
+    items: [
+      ["blog:index", "Blog Index", "/blogs/"],
+      ["blog:n2c-article-1", "Pinned: Turning Cybersecurity Work Into Verifiable Proof", "/blogs/n2c-article-1/"]
+    ]
+  },
+  {
+    title: "Phishing Awareness",
+    items: [
+      ["phishing-awareness", "Phishing Awareness"],
+      ["phishing-awareness/recognise-and-respond", "Recognise And Respond"],
+      ["phishing-awareness/project-approach", "Project Approach"]
+    ]
+  },
+  {
     title: "Project Progress",
     items: [
       ["progress", "Progress Overview"],
+      ["progress/2026-10-project-update", "October 2026 Update"],
       ["progress/2026-06-month-1", "Month 1: Foundations"]
     ]
   },
@@ -33,6 +49,7 @@ const navGroups = [
     title: "CYberSynchrony Modules",
     items: [
       ["cybersynchrony-alignment", "Six-Module Overview"],
+      ["cybersynchrony/selected-tools", "Eight Selected Tools"],
       ["cybersynchrony", "CYberSynchrony Public Results"],
       ["tools:index", "Public Tool References", "/tools/"],
       ["cybersynchrony/modules/cyrescue", "CYRESCUE"],
@@ -41,13 +58,6 @@ const navGroups = [
       ["cybersynchrony/modules/cross-core", "CROSS-CORE"],
       ["cybersynchrony/modules/cyberwise", "CYBERWISE"],
       ["cybersynchrony/modules/cybergoplus", "CYBERGOPLUS"]
-    ]
-  },
-  {
-    title: "Blogs",
-    items: [
-      ["blog:index", "Blog Index", "/blogs/"],
-      ["blog:n2c-article-1", "Pinned: Turning Cybersecurity Work Into Verifiable Proof", "/blogs/n2c-article-1/"]
     ]
   },
   {

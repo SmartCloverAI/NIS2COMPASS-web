@@ -21,6 +21,11 @@ const requiredRoutes = [
   "/docs/",
   "/docs/progress/",
   "/docs/progress/2026-06-month-1/",
+  "/docs/progress/2026-10-project-update/",
+  "/docs/phishing-awareness/",
+  "/docs/phishing-awareness/recognise-and-respond/",
+  "/docs/phishing-awareness/project-approach/",
+  "/docs/cybersynchrony/selected-tools/",
   "/docs/cybersynchrony/",
   "/docs/cybersynchrony-alignment/",
   "/docs/cybersynchrony/modules/cyrescue/",
@@ -131,7 +136,18 @@ for (const title of latestNews.map((item) => escapeHtmlText(item.title))) {
   if (!homeHtml.includes(title)) errors.push(`Home page does not render required news item: ${title}`);
 }
 if (!homeHtml.includes('class="position-box home-position"')) errors.push("Home page is missing the boxed public software and disclosure position");
-if (!homeHtml.includes("six CYberSynchrony modules")) errors.push("Home page must write the CYberSynchrony project name in full");
+if (!homeHtml.includes("CYberSynchrony")) errors.push("Home page must write the CYberSynchrony project name in full");
+for (const route of ["/docs/phishing-awareness/", "/docs/cybersynchrony/selected-tools/"]) {
+  if (!homeHtml.includes(`href="${route}"`)) errors.push(`Home page must link to ${route}`);
+}
+
+const selectedToolsHtml = await readFile(routeToPath("/docs/cybersynchrony/selected-tools/"), "utf8");
+for (const name of ["CSPA", "PTA", "DCO", "Anomaly Detector IDS", "Blockchain Integrity Validator", "TrustSENSE", "ASA", "Policy Tools"]) {
+  if (!selectedToolsHtml.includes(name)) errors.push(`Selected-tool page does not render ${name}`);
+}
+if (!selectedToolsHtml.includes("public-position-doc") || !selectedToolsHtml.includes("<blockquote>")) {
+  errors.push("Selected-tool page must retain its boxed reporting boundary");
+}
 
 const newsHtml = await readFile(routeToPath("/news/"), "utf8");
 if (!newsHtml.includes('class="news-timeline"')) errors.push("News register route does not render the timeline");

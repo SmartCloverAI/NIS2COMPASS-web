@@ -6,9 +6,17 @@ CYBERGOPLUS focuses on governance, cybersecurity policy, compliance, and automat
 
 NIS2COMPASS uses the CYBERGOPLUS role to structure NIS2 control mappings, evidence records, remediation links, approvals, and audit-pack methods. Automation may suggest or organize relationships, but a human reviewer remains responsible for accepting a compliance mapping or conclusion.
 
+## Selected Tools
+
+Selection note: 28 October 2026.
+
+Attack Surface Assessment (ASA) compares an authorised software inventory with known vulnerability information, producing possible matches for analyst verification. It supports baseline review. Policy Tools provides templates and guidance for adapting organisational responsibilities and procedures; its expected output is a reviewed local policy.
+
+> ASA is inventory-based analysis, not a live network scanner. Possible matches require verification. A written policy alone does not establish an effective control. Selection does not establish deployment or NIS2 compliance. See the [eight-tool selection and conditions](../selected-tools.md).
+
 > **Public software position**
 >
-> NIS2COMPASS does not claim a public open-source CYBERGOPLUS implementation or publish unresolved module assignments on this page. Public CYberSynchrony sources describe policy and compliance capabilities at framework level. Availability, interfaces, and any NIS2COMPASS interaction remain separate questions.
+> NIS2COMPASS does not claim a public open-source CYBERGOPLUS implementation on this page. Public CYberSynchrony sources describe policy and compliance capabilities at framework level. Selection of ASA and Policy Tools does not establish public software availability or completed integration.
 
 ## Related Public Resources
 
@@ -23,4 +31,4 @@ NIS2COMPASS uses the CYBERGOPLUS role to structure NIS2 control mappings, eviden
 - [D2.2: CYberSynchrony Framework and use cases](https://cybersynchrony.eu/wp-content/uploads/2025/09/D2.2-Cybersecurity-landscape-and-threat-analysis-end-user-requirement-analysis-and-use-case-Definition-and-CYberSynchrony-Framework-%E2%80%931.0.pdf)
 - [CYberSynchrony public deliverables](https://cybersynchrony.eu/public-deliverables/)
 
-Last reviewed: 22 July 2026.
+Upstream reference review: 22 July 2026.
