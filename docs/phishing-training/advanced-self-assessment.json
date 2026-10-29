@@ -1,0 +1,221 @@
+{
+  "title": "Advanced self-assessment",
+  "description": "Advanced level: practise choosing the safest response in ten harder fictional workplace situations that combine several convincing details.",
+  "intro": "This voluntary self-practice goes beyond the basic self-assessment with ten harder fictional workplace situations. Each one combines several convincing details, such as a real email conversation, a familiar voice or a genuine sign-in page. No technical knowledge is needed, and you do not need to complete the basic level first. These questions are new practice based on the public guidance listed after the quiz; they do not amend or belong to the approved methodology annex. Where that guidance names national reporting services, use your own organisation's approved route at work. It is not a phishing simulation or an employee assessment, and there is no pass mark or grade.",
+  "notice": "This is voluntary practice, not a workplace assessment, a certificate or evidence of formal training. Your choices stay only in this page's memory and are not submitted or saved. Do not enter a name or other identity. No numeric correctness or risk score is saved or sent. Reloading the page or selecting Restart clears all choices. Separately from this quiz, the website's hosting service may keep standard access logs.",
+  "instructions": "Choose one option for each question, then select Check answer to count the question toward your progress and see supportive feedback. Read the explanation before using Previous and Next to move through the questions. After the final question, you can review your answers or restart the quiz.",
+  "labels": {
+    "question": "Question",
+    "of": "of",
+    "check": "Check answer",
+    "next": "Next",
+    "previous": "Previous",
+    "restart": "Restart",
+    "correct": "Correct",
+    "incorrect": "Not the safest response",
+    "answer": "Safest answer",
+    "progress": "Progress",
+    "completed": "Self-check complete",
+    "review": "Review answers",
+    "noJavascript": "Interactive controls need JavaScript. The complete questions, safest answers and explanations remain available without JavaScript."
+  },
+  "questions": [
+    {
+      "id": "a1",
+      "title": "Changed bank details in a real email conversation",
+      "prompt": "A reply in a months-long email conversation with a supplier attaches the expected invoice, but gives new bank details for payment today. What should you do?",
+      "options": [
+        "Pay the new account, as the conversation and invoice look genuine.",
+        "Check the change using your finance process and known contacts.",
+        "Reply in the same conversation asking the supplier to confirm it."
+      ],
+      "answer": 1,
+      "explanation": "Confirm through your finance process, using supplier contact details already on record. Criminals can sometimes get into a real email conversation, so its history and an expected invoice do not prove new bank details, and a reply there could reach them.",
+      "context": ""
+    },
+    {
+      "id": "a2",
+      "title": "A familiar voice with an urgent request",
+      "prompt": "A voice message that sounds exactly like your manager, from a number showing their name, asks you to send a confidential contract to a new personal email address now and tell no one. What should you do?",
+      "options": [
+        "Contact your manager using a number or channel you already trust.",
+        "Send the contract, because the voice and caller name both match.",
+        "Reply to the message asking them to confirm it is really them."
+      ],
+      "answer": 0,
+      "explanation": "Check with your manager using contact details you already had. Computer tools can imitate a familiar voice, and a caller's displayed name can be faked. A reply reaches whoever sent the message, and secrecy is a reason to check, not to hurry.",
+      "context": ""
+    },
+    {
+      "id": "a3",
+      "title": "A QR code that asks for your personal phone",
+      "prompt": "An unexpected email that appears to be from payroll says your work account will lock today unless you scan a QR code (a square pattern a phone camera reads as a link) with your personal phone. What should you do?",
+      "options": [
+        "Scan it with your personal phone, as asked, to protect work devices.",
+        "Scan it, then sign in only if the page shows payroll's logo.",
+        "Do not scan it; check with payroll or IT through known contacts."
+      ],
+      "answer": 2,
+      "explanation": "Do not scan it. Check with payroll or IT using contact details you already trust. A QR code can hide where it leads, a logo is easily copied, and switching to a personal phone does not prove the sender is genuine.",
+      "context": "Your information technology (IT) team helps with work accounts, devices, and computer systems."
+    },
+    {
+      "id": "a4",
+      "title": "A meeting invitation that asks for a code",
+      "prompt": "A contact you met recently sends a meeting invitation starting in five minutes. To join, it says to enter a code it provides on the genuine sign-in page for your work account. What should you do?",
+      "options": [
+        "Enter the code, because the sign-in page is clearly the genuine one.",
+        "Do not enter it; check with the organiser and IT through known contacts.",
+        "Enter the code to join on time, then report the invitation afterwards."
+      ],
+      "answer": 1,
+      "explanation": "Do not enter the code. Check with the organiser and IT using contact details you already know. A genuine sign-in page shows where you are, not who gains access. Entering someone else's code can immediately let their device or app use your account.",
+      "context": ""
+    },
+    {
+      "id": "a5",
+      "title": "An unfamiliar app asks for access",
+      "prompt": "A shared project plan link opens a genuine page from your work email service, where an unknown app asks to read your email and files. What should you do?",
+      "options": [
+        "Accept, because the request appears on a genuine page you recognise.",
+        "Accept, because the app is not asking for your password.",
+        "Decline, then check the app with IT through the approved route."
+      ],
+      "answer": 2,
+      "explanation": "Decline and check with IT through your approved route. Untrusted apps can also ask for access on genuine pages. Accepting could give the app continuing access to your email and files without needing your password.",
+      "context": ""
+    },
+    {
+      "id": "a6",
+      "title": "A website check that asks you to run a command",
+      "prompt": "Opening a work document, you see a check asking you to prove you are human. It gives steps to paste and run a command (an instruction your computer follows) before the link expires. What should you do?",
+      "options": [
+        "Close the page without following the steps, then report it.",
+        "Follow the steps, as similar checks appear on many trusted websites.",
+        "Follow the steps on a personal laptop instead of your work computer."
+      ],
+      "answer": 0,
+      "explanation": "Close the page without running anything and report it through your approved route. Genuine checks may ask you to tick a box or choose pictures, but never to run commands on your device. Following the steps could install harmful software on any computer, work or personal.",
+      "context": ""
+    },
+    {
+      "id": "a7",
+      "title": "A warning and a caller who wants control",
+      "prompt": "A pop-up warning on your work laptop reports a virus and shows a support number. Then a caller claiming to be from IT mentions the warning and asks to control your screen now. What should you do?",
+      "options": [
+        "Allow control, since the caller already knew about the on-screen warning.",
+        "End the call and contact your IT helpdesk through its known route.",
+        "Call the warning's number to check whether the caller is real."
+      ],
+      "answer": 1,
+      "explanation": "End the call without giving control and contact your IT helpdesk using details you already know. IT may sometimes call staff, but knowing about the warning does not prove identity, and the warning's number could also be fake. Giving control could let a stranger use your laptop.",
+      "context": ""
+    },
+    {
+      "id": "a8",
+      "title": "An app you allowed earlier",
+      "prompt": "Yesterday you gave an unfamiliar app access to your work email, then changed your password. Nothing odd has happened since. What should you do now?",
+      "options": [
+        "Treat the new password as enough and watch for unusual activity.",
+        "Tell IT or security which app you allowed, what it can access and when.",
+        "Report it, including your new password so IT can check the account."
+      ],
+      "answer": 1,
+      "explanation": "Tell your approved IT or security contact now which app you allowed, what it could access and when. App permission does not rely on your password, so changing it may not end access. Authorised staff can remove it; never share your password.",
+      "context": ""
+    },
+    {
+      "id": "a9",
+      "title": "A payment that may have reached a criminal",
+      "prompt": "You paid an invoice to new bank details that were never checked, and now suspect fraud. The supplier has not replied yet. What should you do?",
+      "options": [
+        "Tell finance and security now, so authorised staff can contact the bank.",
+        "Wait until the supplier replies, so you report only confirmed fraud.",
+        "Email the bank contact on the invoice asking for the money back."
+      ],
+      "answer": 0,
+      "explanation": "Tell finance and security immediately, even if unsure, so authorised staff can quickly contact the organisation's bank through a known route. Waiting for proof loses time, and recovery is never guaranteed. Invoice contacts may belong to the criminal.",
+      "context": ""
+    },
+    {
+      "id": "a10",
+      "title": "An urgent sign-in change from a colleague",
+      "prompt": "A colleague you often work with messages you in your organisation's chat tool. They say IT needs everyone to change how they sign in within the hour, and share a setup link. What should you do?",
+      "options": [
+        "Follow the link, because it came through your organisation's chat tool.",
+        "Reply in the chat asking your colleague whether the request is real.",
+        "Check with IT through its approved channel before changing any settings."
+      ],
+      "answer": 2,
+      "explanation": "Check with IT through the approved channel before changing how you sign in, and report the message. A colleague's account can be taken over and used inside trusted tools, so a familiar name is not proof. A reply in that chat may come from whoever controls the account.",
+      "context": ""
+    }
+  ],
+  "completion": {
+    "title": "You have completed the advanced self-assessment",
+    "body": "You have reviewed all ten situations. There is no grade, pass mark or certificate, and this practice is not evidence of formal training. Before you finish, find your own organisation's approved routes for reporting suspicious messages, calls, app requests and payment concerns. Do not type these routes or any sensitive details into this website.",
+    "linkText": "Learn how to recognise and respond to phishing",
+    "linkHref": "/docs/phishing-awareness/recognise-and-respond/"
+  },
+  "sourcesTitle": "Public guidance behind these scenarios",
+  "sources": [
+    {
+      "title": "FBI: Business email compromise (fraudulent payment requests in business email)",
+      "url": "https://www.fbi.gov/how-we-can-help-you/common-frauds-and-scams/business-email-compromise",
+      "questions": [
+        "a1",
+        "a9"
+      ]
+    },
+    {
+      "title": "FBI: Impersonation through text and AI-generated voice messages (19 December 2025)",
+      "url": "https://www.ic3.gov/PSA/2025/PSA251219",
+      "questions": [
+        "a2"
+      ]
+    },
+    {
+      "title": "US Federal Trade Commission: Harmful links hidden in QR codes (December 2023)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/12/scammers-hide-harmful-links-qr-codes-steal-your-information",
+      "questions": [
+        "a3"
+      ]
+    },
+    {
+      "title": "Microsoft: Meeting invitations that ask for device sign-in codes (13 February 2025, updated July 2026)",
+      "url": "https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/",
+      "questions": [
+        "a4"
+      ]
+    },
+    {
+      "title": "Microsoft Learn: Detect and remediate illicit consent grants (harmful app permissions)",
+      "url": "https://learn.microsoft.com/en-us/defender-office-365/detect-and-remediate-illicit-consent-grants",
+      "questions": [
+        "a5",
+        "a8"
+      ]
+    },
+    {
+      "title": "US Federal Trade Commission: How to spot a CAPTCHA scam (fake human-verification checks, June 2026)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/06/how-spot-captcha-scam",
+      "questions": [
+        "a6"
+      ]
+    },
+    {
+      "title": "US Federal Trade Commission: How to spot, avoid and report tech support scams",
+      "url": "https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams",
+      "questions": [
+        "a7"
+      ]
+    },
+    {
+      "title": "Microsoft: Fake sign-in security requests themed around passkeys, sent from compromised colleague accounts (9 September 2026)",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/09/passkey-themed-social-engineering-leads-identity-cloud-compromise/",
+      "questions": [
+        "a10"
+      ]
+    }
+  ]
+}

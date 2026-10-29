@@ -4,6 +4,17 @@
   "last_verified": "2026-10-29",
   "items": [
     {
+      "id": "n2c-phishing-training-20261029",
+      "date": "2026-10-29",
+      "date_label": "29 October 2026",
+      "category": "Learning resource",
+      "title": "Phishing Training adds basic and advanced self-assessments",
+      "summary": "The phishing quiz has moved to a new Phishing Training section with two learning levels: the original basic self-assessment and a new advanced self-assessment with ten fictional workplace scenarios. Each question explains the safest action to take. Both are voluntary practice.",
+      "href": "/docs/phishing-training/",
+      "source_label": "Phishing Training",
+      "source_url": "https://www.nis2compass.eu/docs/phishing-training/"
+    },
+    {
       "id": "n2c-evidence-graph-guide-20261029",
       "date": "2026-10-29",
       "date_label": "29 October 2026",
@@ -21,9 +32,9 @@
       "category": "Learning resource",
       "title": "NIS2COMPASS phishing self-check",
       "summary": "Practise recognising deceptive messages and choosing a safe response in ten fictional situations.",
-      "href": "/docs/phishing-awareness/quiz/",
+      "href": "/docs/phishing-training/basic-self-assessment/",
       "source_label": "NIS2COMPASS phishing self-check",
-      "source_url": "https://www.nis2compass.eu/docs/phishing-awareness/quiz/"
+      "source_url": "https://www.nis2compass.eu/docs/phishing-training/basic-self-assessment/"
     },
     {
       "id": "n2c-phishing-learning-guide-20261028",

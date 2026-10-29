@@ -1,7 +1,7 @@
 {
-  "title": "NIS2COMPASS phishing self-check",
-  "description": "Practise recognising deceptive messages and choosing a safe response in ten fictional situations.",
-  "intro": "This voluntary self-practice uses fictional examples. It is not a phishing simulation, an employee assessment, a certificate, evidence of formal training completion, or organisational approval. There is no pass mark or grade.",
+  "title": "Basic self-assessment",
+  "description": "Basic level: practise recognising deceptive messages and choosing a safe response in ten fictional situations.",
+  "intro": "This basic-level voluntary self-practice uses fictional examples adapted from the project's practical knowledge check. It is not a phishing simulation, an employee assessment, a certificate, evidence of formal training completion, or organisational approval. There is no pass mark or grade.",
   "notice": "In this quiz, choices stay only in this page's memory. No answer, name, identity, or numeric correctness or risk score is saved or sent. Reloading the page or selecting Restart clears all choices.",
   "instructions": "Choose one option for each question, then select Check answer to see supportive feedback. Use Previous and Next to move through the questions. After the final question, you can review your answers or restart the quiz.",
   "labels": {
@@ -152,9 +152,9 @@
     }
   ],
   "completion": {
-    "title": "You have completed the phishing self-check",
-    "body": "You have reviewed all ten situations. There is no grade or pass mark. Before you finish, find your own organisation's approved route for reporting suspicious messages or requesting help. Use established instructions, an approved help portal, or an independently verified support contact. Do not type the route or any sensitive details into this website.",
-    "linkText": "Learn how to recognise and respond to phishing",
-    "linkHref": "/docs/phishing-awareness/recognise-and-respond/"
+    "title": "You have completed the basic self-assessment",
+    "body": "You have reviewed all ten situations. There is no grade or pass mark, and this is not a certificate or evidence of formal training. Before you finish, find your own organisation's approved route for reporting suspicious messages or requesting help. Use established instructions, an approved help portal, or an independently verified support contact. Do not type the route or any sensitive details into this website.",
+    "linkText": "Try the advanced self-assessment",
+    "linkHref": "/docs/phishing-training/advanced-self-assessment/"
   }
 }

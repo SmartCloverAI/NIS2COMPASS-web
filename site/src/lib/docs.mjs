@@ -42,11 +42,18 @@ const navGroups = [
     title: "Phishing Awareness",
     items: [
       ["phishing-awareness", "Phishing Awareness"],
-      ["phishing-awareness/quiz", "Phishing Self-Check"],
       ["phishing-awareness/everyday-examples", "Everyday Examples"],
       ["phishing-awareness/recognise-and-respond", "Recognise And Respond"],
       ["phishing-awareness/phishing-in-numbers", "Phishing In Numbers"],
       ["phishing-awareness/project-approach", "Project Approach"]
+    ]
+  },
+  {
+    title: "Phishing Training",
+    items: [
+      ["phishing-training", "Overview"],
+      ["phishing-training/basic-self-assessment", "Basic self-assessment"],
+      ["phishing-training/advanced-self-assessment", "Advanced self-assessment"]
     ]
   },
   {

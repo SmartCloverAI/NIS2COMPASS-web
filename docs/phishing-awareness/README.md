@@ -48,7 +48,7 @@ Separate contact gives the real service or colleague a chance to confirm the req
 
 ## Continue Learning
 
-[NIS2COMPASS phishing self-check](/docs/phishing-awareness/quiz/)
+[Phishing Training](/docs/phishing-training/)
 
 Try the [Everyday Examples](everyday-examples.md), keep [Recognise And Respond](recognise-and-respond.md) available, or read the [Project Approach](project-approach.md) for facilitated learning.
 

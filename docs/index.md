@@ -12,7 +12,7 @@ Copyright: AI STM Learning SRL and SmartClover SRL as the NIS2COMPASS consortium
 2. [Project news register](/news/)
 3. [NIS2 in plain language](nis2-in-plain-language.md)
 4. [Phishing awareness](phishing-awareness/README.md)
-5. [NIS2COMPASS phishing self-check](/docs/phishing-awareness/quiz/)
+5. [Phishing Training](/docs/phishing-training/)
 6. [Evidence Graph](evidence-graph/README.md)
 7. [Eight selected CYberSynchrony tools](cybersynchrony/selected-tools.md)
 8. [Six CYberSynchrony modules](cybersynchrony-alignment.md)

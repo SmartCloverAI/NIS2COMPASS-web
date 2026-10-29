@@ -15,6 +15,9 @@ const publicPositionSlugs = new Set([
   "phishing-awareness/phishing-in-numbers",
   "phishing-awareness/recognise-and-respond",
   "phishing-awareness/project-approach",
+  "phishing-training",
+  "phishing-training/basic-self-assessment",
+  "phishing-training/advanced-self-assessment",
   "playbooks/awareness-and-phishing-metrics-guide",
   "cybersynchrony/selected-tools",
   "progress/2026-10-project-update",
@@ -71,7 +74,7 @@ const publicPositionSlugs = new Set([
         </ul>
       </div>
     </aside>
-    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug), "learning-doc": currentSlug.startsWith("phishing-awareness"), "evidence-graph-doc": currentSlug.startsWith("evidence-graph") }]}>
+    <article class:list={["docs-content", { "module-overview-doc": currentSlug === "cybersynchrony-alignment", "public-position-doc": publicPositionSlugs.has(currentSlug), "learning-doc": currentSlug.startsWith("phishing-awareness") || currentSlug.startsWith("phishing-training"), "evidence-graph-doc": currentSlug.startsWith("evidence-graph") }]}>
       <slot />
     </article>
   </div>

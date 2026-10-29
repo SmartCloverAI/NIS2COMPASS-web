@@ -38,6 +38,6 @@ Someone may ask for proof, for example in a customer questionnaire or when a new
 ## Where Next
 
 - For related practical guidance, see the [evidence pack playbook](/docs/playbooks/evidence-pack-playbook/).
-- To practise recognising phishing, try the [phishing awareness quiz](/docs/phishing-awareness/quiz/). It is a learning self-check, not evidence of attendance or completed training.
+- To practise recognising phishing, try the [Basic self-assessment](/docs/phishing-training/basic-self-assessment/). It is a learning self-check, not evidence of attendance or completed training.
 
 [← Previous: Review and Corrections](review-and-corrections.md) | [Back to start: Evidence Graph](README.md)
